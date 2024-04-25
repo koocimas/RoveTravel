@@ -28,7 +28,6 @@ class TripPlannerManager: ObservableObject {
 
   init() {
     loadJSONCategorizedItems()
-    print(URL.documentsDirectory.path)
   }
 
   private func loadJSONCategorizedItems() {
