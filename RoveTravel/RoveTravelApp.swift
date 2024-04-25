@@ -1,17 +1,15 @@
 //
-//  RoveTravelApp.swift
-//  RoveTravel
-//
-//  Created by Sam Cook on 4/25/24.
+//  RoveApp.swift
+//  Rove
 //
 
 import SwiftUI
 
 @main
-struct RoveTravelApp: App {
+struct RoveApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          ContentView(destination: Destination.previewDestination[0], timeResults: TimeResults.timeExample)
         }
     }
 }

@@ -1,0 +1,68 @@
+//
+//  NewsManager.swift
+//  Rove
+//
+
+import Foundation
+
+class NewsManager: ObservableObject {
+  @Published var articles: [Article] = []
+  @Published var searchText: String = "Amman"
+
+  func fetchNews() async throws {
+    do {
+      //  let apiKey = newsApiKey
+      let query = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+      let urlString = "https://newsapi.org/v2/everything?q=\(query)&apiKey=56fad0c282a549fc87e75a4f589239b0&pageSize=1&language=en"
+      guard let url = URL(string: urlString) else {
+        print("Error here")
+        return
+      }
+      var request = URLRequest(url: url)
+      request.httpMethod = "GET"
+      //   request.setValue(apiKey, forHTTPHeaderField: "X-API-Key")
+
+      do {
+        let (data, response) = try await URLSession.shared.data(from: url)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+          print("Error here")
+          return
+        }
+
+        if (200..<300).contains(httpResponse.statusCode) {
+          try await MainActor.run {
+            let decodedResponse = try JSONDecoder().decode(NewsResults.self, from: data)
+            self.articles = decodedResponse.articles ?? []
+          }
+        } else {
+          print("HTTP status code: \(httpResponse.statusCode)")
+        }
+      } catch {
+        print("Error fetching data: \(error)")
+      }
+      let (data, _) = try await URLSession.shared.data(for: request)
+      try await MainActor.run {
+        let decodedResponse = try JSONDecoder().decode(NewsResults.self, from: data)
+        self.articles = decodedResponse.articles ?? []
+      }
+    } catch {
+      print("error there")
+      print(error)
+    }
+  }
+}
+
+//  var newsApiKey: String {
+//    get {
+//      guard let filePath = Bundle.main.path(forResource: "News-Info", ofType: "plist") else {
+//        fatalError("Couldn't find file 'News-Info.plist'.")
+//      }
+//      let plist = NSDictionary(contentsOfFile: filePath)
+//      guard let value = plist?.object(forKey: "API_KEY") as? String else {
+//        fatalError("Couldn't find key 'API_KEY' in 'News-Info.plist'.")
+//      }
+//      return value
+//    }
+// }
+
