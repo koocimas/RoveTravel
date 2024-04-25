@@ -11,16 +11,16 @@ class NewsManager: ObservableObject {
 
   func fetchNews() async throws {
     do {
-      //  let apiKey = newsApiKey
+      let apiKey = newsApiKey
       let query = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-      let urlString = "https://newsapi.org/v2/everything?q=\(query)&apiKey=56fad0c282a549fc87e75a4f589239b0&pageSize=1&language=en"
+      let urlString = "https://newsapi.org/v2/everything?q=\(query)&apiKey=\(apiKey)&pageSize=1&language=en"
       guard let url = URL(string: urlString) else {
         print("Error here")
         return
       }
       var request = URLRequest(url: url)
       request.httpMethod = "GET"
-      //   request.setValue(apiKey, forHTTPHeaderField: "X-API-Key")
+      request.setValue(apiKey, forHTTPHeaderField: "X-API-Key")
 
       do {
         let (data, response) = try await URLSession.shared.data(from: url)
@@ -51,18 +51,18 @@ class NewsManager: ObservableObject {
       print(error)
     }
   }
+
+  var newsApiKey: String {
+    get {
+      guard let filePath = Bundle.main.path(forResource: "News-Info", ofType: "plist") else {
+        fatalError("Couldn't find file 'News-Info.plist'.")
+      }
+      let plist = NSDictionary(contentsOfFile: filePath)
+      guard let value = plist?.object(forKey: "API_KEY") as? String else {
+        fatalError("Couldn't find key 'API_KEY' in 'News-Info.plist'.")
+      }
+      return value
+    }
+  }
+
 }
-
-//  var newsApiKey: String {
-//    get {
-//      guard let filePath = Bundle.main.path(forResource: "News-Info", ofType: "plist") else {
-//        fatalError("Couldn't find file 'News-Info.plist'.")
-//      }
-//      let plist = NSDictionary(contentsOfFile: filePath)
-//      guard let value = plist?.object(forKey: "API_KEY") as? String else {
-//        fatalError("Couldn't find key 'API_KEY' in 'News-Info.plist'.")
-//      }
-//      return value
-//    }
-// }
-
