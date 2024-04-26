@@ -38,7 +38,6 @@ struct CurrencyWidgetView: View {
         .padding(.bottom, -10)
       HStack {
         TextField("Enter Amount", value: $amount, formatter: baseCurrencyFormatter)
-          .accessibilityIdentifier("amountEntered")
           .keyboardType(.numbersAndPunctuation)
           .foregroundStyle(.accent)
           .opacity(0.5)
@@ -73,22 +72,28 @@ struct CurrencyWidgetView: View {
       Button("Convert") {
         runConversion()
       }
-      .accessibilityIdentifier("convertButton")
       .buttonStyle(.bordered)
       .padding(.top, -30)
     }
     .alert(isPresented: $showErrorAlert) {
-        Alert(title: Text("Error"), message: Text("Failed to fetch conversion. Check your network connection or try again later."), dismissButton: .default(Text("OK")))
+        Alert(
+          title: Text("Error"),
+          message: Text("Failed to fetch conversion. Check your network connection or try again later."),
+          dismissButton: .default(Text("OK")))
     }
     .padding()
     .background(RoundedRectangle(cornerRadius: 20)
-      .fill(LinearGradient(gradient: Gradient(colors: [.light, Color("DarkColor")]), startPoint: .leading, endPoint: .trailing))
+      .fill(
+        LinearGradient(
+          gradient: Gradient(colors: [.light, Color("DarkColor")]),
+          startPoint: .leading,
+          endPoint: .trailing))
     )
   }
   func runConversion() {
     Task {
       currencyModel.baseCode = baseCode ?? "USD"
-      currencyModel.targetCode = destination.currencyCode 
+      currencyModel.targetCode = destination.currencyCode
       currencyModel.amount = amount ?? 0.0
       do {
         try await currencyModel.fetchConversion()

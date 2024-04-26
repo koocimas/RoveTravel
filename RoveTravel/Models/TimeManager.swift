@@ -13,7 +13,16 @@ class TimeManager: ObservableObject {
   @Published var hour: Int = 0
   @Published var dayOfWeek: String = ""
 
-  func fetchDateTime() async throws {
+  init() {
+    Task {
+      await fetchDateTime()
+      await fetchTimeZone()
+      await fetchDayOfWeek()
+      await fetchHour()
+    }
+  }
+
+  func fetchDateTime() async {
     do {
       let urlString = "https://timeapi.io/api/Time/current/coordinate?latitude=\(latitude)&longitude=\(longitude)"
       guard let url = URL(string: urlString) else {
@@ -56,7 +65,7 @@ class TimeManager: ObservableObject {
     }
   }
 
-  func fetchTimeZone() async throws {
+  func fetchTimeZone() async {
     do {
       let urlString = "https://timeapi.io/api/Time/current/coordinate?latitude=\(latitude)&longitude=\(longitude)"
       guard let url = URL(string: urlString) else {
@@ -99,7 +108,7 @@ class TimeManager: ObservableObject {
     }
   }
 
-  func fetchDayOfWeek() async throws {
+  func fetchDayOfWeek() async {
     do {
       let urlString = "https://timeapi.io/api/Time/current/coordinate?latitude=\(latitude)&longitude=\(longitude)"
       guard let url = URL(string: urlString) else {
@@ -142,7 +151,7 @@ class TimeManager: ObservableObject {
     }
   }
 
-  func fetchHour() async throws {
+  func fetchHour() async {
     do {
       let urlString = "https://timeapi.io/api/Time/current/coordinate?latitude=\(latitude)&longitude=\(longitude)"
       guard let url = URL(string: urlString) else {

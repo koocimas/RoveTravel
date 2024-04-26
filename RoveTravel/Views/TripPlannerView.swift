@@ -20,30 +20,35 @@ struct TripPlannerView: View {
             RowView(tripPlannerManager: tripPlannerManager, completed: $completed, item: item)
           }
           .listRowBackground(
-            LinearGradient(gradient: Gradient(colors: [.light, Color("DarkColor")]), startPoint: .leading, endPoint: .trailing)
+            LinearGradient(
+              gradient: Gradient(colors: [.light, Color("DarkColor")]),
+              startPoint: .leading,
+              endPoint: .trailing)
           )
         }
         Section(footer:
                   HStack {
           Button(
-            action: { self.sheetPresented = true }
-          ) {
-            Image(systemName: "plus.circle.fill")
-              .opacity(0.9)
-              .foregroundStyle(Color.accentColor)
-              .font(.title)
-          }.accessibilityIdentifier("Add")
+            action: {
+              self.sheetPresented = true }){
+                Image(systemName: "plus.circle.fill")
+                  .opacity(0.9)
+                  .foregroundStyle(Color.accentColor)
+                  .font(.title)
+              }
         }) {
           EmptyView()
         }
       }
-      .navigationDestination(for: Item.self)
-      { item in
+      .navigationDestination(for: Item.self) { item in
         ItemEditingView(item: $tripPlannerManager.items
           .first(where: { $0.id == item.id })!)
       }
       .background(
-        AngularGradient(gradient: Gradient(colors: [Color("DarkColor"), .light]), center: .topLeading, startAngle: .degrees(90), endAngle: .degrees(20))
+        AngularGradient(
+          gradient: Gradient(colors: [Color("DarkColor"), .light]),
+          center: .topLeading,
+          startAngle: .degrees(90), endAngle: .degrees(20))
       )
       .listStyle(InsetGroupedListStyle())
       .scrollContentBackground(.hidden)
@@ -54,11 +59,10 @@ struct TripPlannerView: View {
   }
 }
 
-struct TripPlannerView_Previews: PreviewProvider  {
+struct TripPlannerView_Previews: PreviewProvider {
   static var previews: some View {
     NavigationStack {
       TripPlannerView(tripPlannerManager: TripPlannerManager(), destination: Destination.previewDestination[0])
     }
   }
 }
-

@@ -15,7 +15,8 @@ class CurrencyModel: ObservableObject {
   func fetchConversion() async throws {
     do {
       let apiKey = currencyApiKey
-      let urlString = "https://v6.exchangerate-api.com/v6/\(apiKey)/pair/\(baseCode ?? "USD")/\(targetCode ?? "USD")/\(amount ?? 0)"
+      let urlString =
+      "https://v6.exchangerate-api.com/v6/\(apiKey)/pair/\(baseCode ?? "USD")/\(targetCode ?? "USD")/\(amount ?? 0)"
       guard let url = URL(string: urlString) else {
         print("Error here")
         return
@@ -57,7 +58,6 @@ class CurrencyModel: ObservableObject {
   }
 
   var currencyApiKey: String {
-    get {
       guard let filePath = Bundle.main.path(forResource: "Currency-Info", ofType: "plist") else {
         fatalError("Couldn't find file 'Currency-Info.plist'.")
       }
@@ -66,6 +66,5 @@ class CurrencyModel: ObservableObject {
         fatalError("Couldn't find key 'API_KEY' in 'Currency-Info.plist'.")
       }
       return value
-    }
   }
 }

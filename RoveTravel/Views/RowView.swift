@@ -24,9 +24,7 @@ struct RowView: View {
                 tripPlannerManager.toggleItemCompletion(item: item)
             }
         }
-        completed.toggle()
-      })
-      {
+        completed.toggle()}){
         Image(systemName: item.completed == isAnimating ? "square.dotted" : "checkmark")
           .fontWeight(.light)
       }

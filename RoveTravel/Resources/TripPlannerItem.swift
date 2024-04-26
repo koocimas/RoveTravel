@@ -19,4 +19,13 @@ struct Item: Identifiable, Codable, Hashable {
     case notes
     case destinationID
   }
+
+  static func example() -> Item {
+    Item(
+      name: "Visit Petra",
+      completed: false,
+      notes: "",
+      destinationID: "Amman"
+    )
+  }
 }

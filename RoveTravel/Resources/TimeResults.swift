@@ -17,7 +17,20 @@ struct TimeResults: Codable {
 
 extension TimeResults {
   static var timeExample: TimeResults {
-    TimeResults(year: 2024, month: 01, day: 01, hour: 01, minute: 01, seconds: 01, milliSeconds: 01, dateTime: "2024-01-01T01:01:01.01", date: "0/1/01/2024", time: "01:01", timeZone: "America/New York", dayOfWeek: "Monday", dstActive: true)
+    TimeResults(
+      year: 2024,
+      month: 01,
+      day: 01,
+      hour: 01,
+      minute: 01,
+      seconds: 01,
+      milliSeconds: 01,
+      dateTime: "2024-01-01T01:01:01.01",
+      date: "0/1/01/2024",
+      time: "01:01",
+      timeZone: "America/New York",
+      dayOfWeek: "Monday",
+      dstActive: true)
   }
 }
 func timeIn12HourFormat(from date: Date) -> String {
@@ -27,7 +40,7 @@ func timeIn12HourFormat(from date: Date) -> String {
   dateFormatter.pmSymbol = "PM"
   return dateFormatter.string(from: date)
 }
-func dateFormatTime(date : String) -> Date {
+func dateFormatTime(date: String) -> Date {
   let dateFormatter = DateFormatter()
   dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSS"
   return dateFormatter.date(from: date) ?? Date.now

@@ -19,7 +19,6 @@ struct ContentView: View {
             .foregroundStyle(Color.accentColor)
         }
       }
-      .accessibilityIdentifier("destinationsList")
       .background(Color.dark)
       .listStyle(.plain)
       .navigationTitle("Where to Rove")
@@ -29,7 +28,11 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView(destination: Destination.previewDestination[0], timeResults: TimeResults.timeExample).preferredColorScheme(.light)
-    ContentView(destination: Destination.previewDestination[0], timeResults: TimeResults.timeExample).preferredColorScheme(.dark)
+    ContentView(destination: Destination.previewDestination[0],
+                timeResults: TimeResults.timeExample)
+    .preferredColorScheme(.light)
+    ContentView(destination: Destination.previewDestination[0],
+                timeResults: TimeResults.timeExample)
+    .preferredColorScheme(.dark)
   }
 }

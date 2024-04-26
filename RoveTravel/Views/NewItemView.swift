@@ -12,7 +12,6 @@ struct NewItemView: View {
   @State private var notes = ""
   var destination: Destination
 
-
   var body: some View {
     NavigationStack {
       Form {

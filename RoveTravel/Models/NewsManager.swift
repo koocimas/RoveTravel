@@ -53,7 +53,6 @@ class NewsManager: ObservableObject {
   }
 
   var newsApiKey: String {
-    get {
       guard let filePath = Bundle.main.path(forResource: "News-Info", ofType: "plist") else {
         fatalError("Couldn't find file 'News-Info.plist'.")
       }
@@ -62,7 +61,6 @@ class NewsManager: ObservableObject {
         fatalError("Couldn't find key 'API_KEY' in 'News-Info.plist'.")
       }
       return value
-    }
   }
 
 }

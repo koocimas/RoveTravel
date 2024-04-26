@@ -11,6 +11,7 @@ class TripPlannerManager: ObservableObject {
                       relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("json")
   @Published var id = UUID()
   @Published var addingItem = false
+  @Published var item: Item = Item.example()
   @Published var items: [Item] = [] {
     didSet {
       saveJSONCategorizedItems()
@@ -58,7 +59,7 @@ class TripPlannerManager: ObservableObject {
     }
   }
 }
-extension TripPlannerManager: Identifiable, Hashable  {
+extension TripPlannerManager: Identifiable, Hashable {
     var identifier: String {
             return UUID().uuidString
         }

@@ -18,7 +18,10 @@ struct SnapshotView: View {
     }
     .padding()
     .background(
-      AngularGradient(gradient: Gradient(colors: [Color("DarkColor"), .light]), center: .topLeading, startAngle: .degrees(90), endAngle: .degrees(20))
+      AngularGradient(
+        gradient: Gradient(colors: [Color("DarkColor"), .light]),
+        center: .topLeading, startAngle: .degrees(90),
+        endAngle: .degrees(20))
     )
   }
 }
@@ -26,5 +29,3 @@ struct SnapshotView: View {
 #Preview {
   SnapshotView(destination: Destination.previewDestination[0], timeResults: TimeResults.timeExample)
 }
-
-

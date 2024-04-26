@@ -10,8 +10,10 @@ struct DestinationRow: View {
   var timeResults: TimeResults
 
   var body: some View {
-    NavigationLink("\(destination.city), \(destination.country)", destination: DestinationPortalView(destination: destination, timeResults: timeResults))
-      .foregroundStyle(Color.accentColor)
+    NavigationLink("\(destination.city), \(destination.country)",
+                   destination: DestinationPortalView(destination: destination,
+                   timeResults: timeResults))
+    .foregroundStyle(Color.accentColor)
   }
 }
 

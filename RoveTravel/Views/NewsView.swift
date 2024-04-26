@@ -20,10 +20,11 @@ struct NewsView: View {
         .multilineTextAlignment(.center)
         .padding(.top)
       List {
-        ForEach(newsManager.articles, id:\.title) { article in
+        ForEach(newsManager.articles, id: \.title) { article in
           Button(action: {
             selectedNews = article
             sheetPresented = true
+            // swiftlint:disable:next multiple_closures_with_trailing_closure
           }) {
             HStack {
               AsyncImage( url: URL(string: article.urlToImage ?? "")) { image in
@@ -57,7 +58,12 @@ struct NewsView: View {
     }
     .frame(minHeight: 350, maxHeight: .infinity)
     .background(RoundedRectangle(cornerRadius: 20)
-      .fill(LinearGradient(gradient: Gradient(colors: [.light, Color("DarkColor")]), startPoint: .leading, endPoint: .trailing)).ignoresSafeArea()
+      .fill(
+        LinearGradient(
+          gradient: Gradient(colors: [.light, Color("DarkColor")]),
+          startPoint: .leading,
+          endPoint: .trailing))
+        .ignoresSafeArea()
     )
     .task {
       do {

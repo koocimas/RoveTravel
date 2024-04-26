@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		EB13233E2BDAF48300E3B901 /* RoveTravelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB13233D2BDAF48300E3B901 /* RoveTravelUITestsLaunchTests.swift */; };
-		EB1323472BDAFD2000E3B901 /* MainViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1323462BDAFD2000E3B901 /* MainViewUITests.swift */; };
-		EB13234F2BDB024000E3B901 /* RoveTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB13234E2BDB024000E3B901 /* RoveTravelTests.swift */; };
+		EB1323472BDAFD2000E3B901 /* RoveTravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1323462BDAFD2000E3B901 /* RoveTravelUITests.swift */; };
+		EB13234F2BDB024000E3B901 /* TimeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB13234E2BDB024000E3B901 /* TimeUnitTests.swift */; };
+		EB1323562BDB57F200E3B901 /* TripPlannerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1323552BDB57F200E3B901 /* TripPlannerUnitTests.swift */; };
 		EB40A7752BDAD6820049A659 /* RoveTravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7742BDAD6820049A659 /* RoveTravelApp.swift */; };
 		EB40A7772BDAD6820049A659 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7762BDAD6820049A659 /* ContentView.swift */; };
 		EB40A7792BDAD6830049A659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB40A7782BDAD6830049A659 /* Assets.xcassets */; };
@@ -59,9 +60,10 @@
 /* Begin PBXFileReference section */
 		EB1323392BDAF48300E3B901 /* RoveTravelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoveTravelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB13233D2BDAF48300E3B901 /* RoveTravelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoveTravelUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		EB1323462BDAFD2000E3B901 /* MainViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewUITests.swift; path = RoveTravelUITests/MainViewUITests.swift; sourceTree = SOURCE_ROOT; };
+		EB1323462BDAFD2000E3B901 /* RoveTravelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoveTravelUITests.swift; path = RoveTravelUITests/RoveTravelUITests.swift; sourceTree = SOURCE_ROOT; };
 		EB13234C2BDB024000E3B901 /* RoveTravelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoveTravelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB13234E2BDB024000E3B901 /* RoveTravelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoveTravelTests.swift; sourceTree = "<group>"; };
+		EB13234E2BDB024000E3B901 /* TimeUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnitTests.swift; sourceTree = "<group>"; };
+		EB1323552BDB57F200E3B901 /* TripPlannerUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlannerUnitTests.swift; sourceTree = "<group>"; };
 		EB40A7712BDAD6820049A659 /* RoveTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoveTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB40A7742BDAD6820049A659 /* RoveTravelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoveTravelApp.swift; sourceTree = "<group>"; };
 		EB40A7762BDAD6820049A659 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -121,7 +123,7 @@
 		EB13233A2BDAF48300E3B901 /* RoveTravelUITests */ = {
 			isa = PBXGroup;
 			children = (
-				EB1323462BDAFD2000E3B901 /* MainViewUITests.swift */,
+				EB1323462BDAFD2000E3B901 /* RoveTravelUITests.swift */,
 				EB13233D2BDAF48300E3B901 /* RoveTravelUITestsLaunchTests.swift */,
 			);
 			path = RoveTravelUITests;
@@ -130,7 +132,8 @@
 		EB13234D2BDB024000E3B901 /* RoveTravelTests */ = {
 			isa = PBXGroup;
 			children = (
-				EB13234E2BDB024000E3B901 /* RoveTravelTests.swift */,
+				EB13234E2BDB024000E3B901 /* TimeUnitTests.swift */,
+				EB1323552BDB57F200E3B901 /* TripPlannerUnitTests.swift */,
 			);
 			path = RoveTravelTests;
 			sourceTree = "<group>";
@@ -377,7 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB13233E2BDAF48300E3B901 /* RoveTravelUITestsLaunchTests.swift in Sources */,
-				EB1323472BDAFD2000E3B901 /* MainViewUITests.swift in Sources */,
+				EB1323472BDAFD2000E3B901 /* RoveTravelUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +388,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB13234F2BDB024000E3B901 /* RoveTravelTests.swift in Sources */,
+				EB13234F2BDB024000E3B901 /* TimeUnitTests.swift in Sources */,
+				EB1323562BDB57F200E3B901 /* TripPlannerUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +550,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -609,7 +613,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

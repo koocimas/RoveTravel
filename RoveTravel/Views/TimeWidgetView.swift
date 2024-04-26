@@ -26,20 +26,21 @@ struct TimeWidgetView: View {
     VStack {
       HStack {
         VStack {
-          Text("\(dayOfWeek), \(dateFormatTime(date: "\(destinationDateTime)"), format: .dateTime.day().month().year())")
-            .accessibilityIdentifier("dayOfWeekLabel")
-            .foregroundStyle(.accent)
-            .font(.title3)
-            .multilineTextAlignment(.center)
-            .fontWeight(.light)
+          Text(
+            """
+            \(dayOfWeek), \(dateFormatTime(date: "\(destinationDateTime)"), format: .dateTime.day().month().year())
+            """
+          )
+          .foregroundStyle(.accent)
+          .font(.title3)
+          .multilineTextAlignment(.center)
+          .fontWeight(.light)
           Text(timeIn12HourFormat(from: dateFormatTime(date: "\(destinationDateTime)")))
-            .accessibilityIdentifier("timeLabel")
             .foregroundStyle(.accent)
             .fontWeight(.light)
             .font(.body)
             .multilineTextAlignment(.center)
           Text("Timezone: \(destinationTimeZone)")
-            .accessibilityIdentifier("timeZoneLabel")
             .foregroundStyle(.accent)
             .font(.caption)
             .fontWeight(.light)
@@ -60,7 +61,10 @@ struct TimeWidgetView: View {
     .padding(.bottom, 5)
     .frame(maxWidth: .infinity)
     .background(RoundedRectangle(cornerRadius: 20)
-      .fill(LinearGradient(gradient: Gradient(colors: [.light, Color("DarkColor")]), startPoint: .leading, endPoint: .trailing))
+      .fill(LinearGradient(
+        gradient: Gradient(colors: [.light, Color("DarkColor")]),
+        startPoint: .leading,
+        endPoint: .trailing))
     )
   }
   func getTime() {
@@ -68,7 +72,7 @@ struct TimeWidgetView: View {
       timeManager.latitude = Float(destination.latitude)
       timeManager.longitude = Float(destination.longitude)
       do {
-        try await timeManager.fetchDateTime()
+        await timeManager.fetchDateTime()
       }
     }
   }
@@ -77,7 +81,7 @@ struct TimeWidgetView: View {
       timeManager.latitude = Float(destination.latitude)
       timeManager.longitude = Float(destination.longitude)
       do {
-        try await timeManager.fetchTimeZone()
+        await timeManager.fetchTimeZone()
       }
     }
   }
@@ -86,7 +90,7 @@ struct TimeWidgetView: View {
       timeManager.latitude = Float(destination.latitude)
       timeManager.longitude = Float(destination.longitude)
       do {
-        try await timeManager.fetchDayOfWeek()
+        await timeManager.fetchDayOfWeek()
       }
     }
   }

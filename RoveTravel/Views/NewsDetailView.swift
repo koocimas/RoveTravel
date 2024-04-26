@@ -27,7 +27,12 @@ struct NewsDetailView: View {
           .foregroundStyle(Color(.accent))
           .fontWeight(.light)
 
-        Text("Published: \(getStringFrom(strDate: articles.publishedAt ?? "")) \nAuthor(s): \(articles.author ?? "Author unavailable")")
+        Text("Published: \(getStringFrom(strDate: articles.publishedAt ?? ""))")
+          .font(.caption)
+          .fontWeight(.light)
+          .multilineTextAlignment(.center)
+          .foregroundStyle(Color(.accent))
+        Text("Author(s): \(articles.author ?? "Author unavailable")")
           .font(.caption)
           .fontWeight(.light)
           .multilineTextAlignment(.center)
@@ -42,11 +47,16 @@ struct NewsDetailView: View {
           .fontWeight(.light)
           .multilineTextAlignment(.leading)
           .foregroundStyle(Color(.accent))
-      }
+    }
       .padding()
     }
     .background(
-      AngularGradient(gradient: Gradient(colors: [Color.dark, Color.light,]), center: .topLeading, startAngle: .degrees(90), endAngle: .degrees(20))
+      AngularGradient(
+        gradient: Gradient(
+        colors: [Color.dark, Color.light]),
+        center: .topLeading,
+        startAngle: .degrees(90),
+        endAngle: .degrees(20))
     )
   }
 }
