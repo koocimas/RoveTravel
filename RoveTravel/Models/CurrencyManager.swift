@@ -16,15 +16,16 @@ class CurrencyModel: ObservableObject {
     do {
       let apiKey = currencyApiKey
       let urlString =
-      "https://v6.exchangerate-api.com/v6/\(apiKey)/pair/\(baseCode ?? "USD")/\(targetCode ?? "USD")/\(amount ?? 0)"
+      "https://v6.exchangerate-api.com/v6/pair/\(baseCode ?? "USD")/\(targetCode ?? "USD")/\(amount ?? 0)"
       guard let url = URL(string: urlString) else {
         print("Error here")
         return
       }
       var request = URLRequest(url: url)
       request.httpMethod = "GET"
-      //   request.addValue(apiKey, forHTTPHeaderField: "X-Api-Key")
-
+      // request.setValue(apiKey, forHTTPHeaderField: "Authorization")
+      request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization"
+      )
       do {
         let (data, response) = try await URLSession.shared.data(from: url)
 

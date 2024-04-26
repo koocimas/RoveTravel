@@ -13,7 +13,7 @@ class NewsManager: ObservableObject {
     do {
       let apiKey = newsApiKey
       let query = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-      let urlString = "https://newsapi.org/v2/everything?q=\(query)&apiKey=\(apiKey)&pageSize=1&language=en"
+      let urlString = "https://newsapi.org/v2/everything?q=\(query)&pageSize=1&language=en"
       guard let url = URL(string: urlString) else {
         print("Error here")
         return

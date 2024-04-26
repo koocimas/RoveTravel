@@ -34,7 +34,7 @@ struct NewsView: View {
               } placeholder: {
                 ProgressView()
               }
-              Text(article.title ?? "")
+              Text(article.title ?? "News Article Unavailable")
                 .foregroundStyle(Color.accentColor)
                 .fontWeight(.light)
                 .font(.footnote)

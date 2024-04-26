@@ -13,11 +13,11 @@ struct TimeWidgetView: View {
     let newTime = timeManager.dateTime
     return newTime
   }
-  private var destinationTimeZone: String {
+  private var destinationTimeZone: String? {
     let timeZone = timeManager.timeZone
     return timeZone
   }
-  private var dayOfWeek: String {
+  private var dayOfWeek: String? {
     let day = timeManager.dayOfWeek
     return day
   }
@@ -25,11 +25,10 @@ struct TimeWidgetView: View {
     VStack {
       HStack {
         VStack {
-          Text(
-            """
-            \(dayOfWeek), \(dateFormatTime(date: "\(destinationDateTime)"), format: .dateTime.day().month().year())
-            """
-          )
+          HStack {
+            Text("\(dayOfWeek ?? "Weekday unavailable"),")
+            Text(dateFormatTime(date: "\(destinationDateTime)"), format: .dateTime.day().month().year())
+          }
           .foregroundStyle(.accent)
           .font(.title3)
           .multilineTextAlignment(.center)
@@ -39,7 +38,7 @@ struct TimeWidgetView: View {
             .fontWeight(.light)
             .font(.body)
             .multilineTextAlignment(.center)
-          Text("Timezone: \(destinationTimeZone)")
+          Text("Timezone: \(destinationTimeZone ?? "Timezone unavailable")")
             .foregroundStyle(.accent)
             .font(.caption)
             .fontWeight(.light)
