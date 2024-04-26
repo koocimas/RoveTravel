@@ -10,7 +10,6 @@ struct DestinationPortalView: View {
   @State var timeResults: TimeResults
   @ObservedObject var tripPlannerManager = TripPlannerManager()
   @ObservedObject var timeManager = TimeManager()
-
   init(destination: Destination,
        timeResults: TimeResults,
        tripPlannerManager: TripPlannerManager = TripPlannerManager()) {
@@ -21,7 +20,7 @@ struct DestinationPortalView: View {
     UITabBarItem.appearance().badgeColor = .badge
     UINavigationBar.appearance().largeTitleTextAttributes =
     [.font: UIFont.systemFont(ofSize: 30, weight: .light, width: .expanded),
-      .foregroundColor: UIColor.accent]
+     .foregroundColor: UIColor.accent]
     UINavigationBar.appearance().barTintColor = UIColor.dark
     UITabBar.appearance().barTintColor = UIColor.dark
   }
@@ -35,9 +34,9 @@ struct DestinationPortalView: View {
         tripPlannerManager: TripPlannerManager(),
         destination: destination
       )
-        .tabItem {
-          Label("Trip Planner", systemImage: "pencil.and.list.clipboard")
-        }
+      .tabItem {
+        Label("Trip Planner", systemImage: "pencil.and.list.clipboard")
+      }
     }.navigationTitle(destination.city)
   }
 }

@@ -11,7 +11,6 @@ struct TripPlannerView: View {
   @State var completed = false
   @State var sheetPresented = false
   var destination: Destination
-
   var body: some View {
     NavigationStack {
       List {
@@ -30,11 +29,13 @@ struct TripPlannerView: View {
                   HStack {
           Button(
             action: {
-              self.sheetPresented = true }){
+              // swiftlint:disable multiple_closures_with_trailing_closure
+              self.sheetPresented = true }) {
                 Image(systemName: "plus.circle.fill")
                   .opacity(0.9)
                   .foregroundStyle(Color.accentColor)
                   .font(.title)
+                // swiftlint:enable multiple_closures_with_trailing_closure
               }
         }) {
           EmptyView()

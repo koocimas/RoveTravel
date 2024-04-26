@@ -9,10 +9,9 @@ import WeatherKit
 struct SnapshotView: View {
   var destination: Destination
   var timeResults: TimeResults
-
   var body: some View {
     ScrollView {
-      TimeWidgetView(destination: destination, timeResults: timeResults)
+      TimeWidgetView(timeResults: timeResults, destination: destination)
       CurrencyWidgetView(destination: destination)
       NewsView(destination: destination)
     }

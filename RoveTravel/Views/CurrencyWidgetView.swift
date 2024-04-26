@@ -27,7 +27,6 @@ struct CurrencyWidgetView: View {
     formatter.usesGroupingSeparator = true
     return formatter
   }
-
   var body: some View {
     VStack {
       Text("Exchange Rate")
@@ -45,12 +44,7 @@ struct CurrencyWidgetView: View {
           .fontWeight(.light)
           .multilineTextAlignment(.leading)
         Spacer()
-        Text("=")
-          .foregroundStyle(.accent)
-          .font(.body)
-          .fontWeight(.light)
-          .multilineTextAlignment(.center)
-        Text("\(conversionResults ?? 0.0, specifier: "%.2f")")
+        Text("= \(conversionResults ?? 0.0, specifier: "%.2f")")
           .foregroundStyle(.accent)
           .font(.body)
           .fontWeight(.light)
@@ -76,10 +70,10 @@ struct CurrencyWidgetView: View {
       .padding(.top, -30)
     }
     .alert(isPresented: $showErrorAlert) {
-        Alert(
-          title: Text("Error"),
-          message: Text("Failed to fetch conversion. Check your network connection or try again later."),
-          dismissButton: .default(Text("OK")))
+      Alert(
+        title: Text("Error"),
+        message: Text("Failed to fetch conversion. Check your network connection or try again later."),
+        dismissButton: .default(Text("OK")))
     }
     .padding()
     .background(RoundedRectangle(cornerRadius: 20)

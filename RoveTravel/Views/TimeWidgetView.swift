@@ -6,9 +6,9 @@
 import SwiftUI
 
 struct TimeWidgetView: View {
-  var destination: Destination
   @ObservedObject var timeManager = TimeManager()
   @State var timeResults: TimeResults = TimeResults.timeExample
+  var destination: Destination
   private var destinationDateTime: String {
     let newTime = timeManager.dateTime
     return newTime
@@ -21,7 +21,6 @@ struct TimeWidgetView: View {
     let day = timeManager.dayOfWeek
     return day
   }
-
   var body: some View {
     VStack {
       HStack {
@@ -97,5 +96,5 @@ struct TimeWidgetView: View {
 }
 
 #Preview {
-  TimeWidgetView(destination: Destination.previewDestination[0], timeResults: TimeResults.timeExample)
+  TimeWidgetView(timeResults: TimeResults.timeExample, destination: Destination.previewDestination[0])
 }

@@ -26,7 +26,6 @@ struct NewsDetailView: View {
           .padding()
           .foregroundStyle(Color(.accent))
           .fontWeight(.light)
-
         Text("Published: \(getStringFrom(strDate: articles.publishedAt ?? ""))")
           .font(.caption)
           .fontWeight(.light)
@@ -47,13 +46,13 @@ struct NewsDetailView: View {
           .fontWeight(.light)
           .multilineTextAlignment(.leading)
           .foregroundStyle(Color(.accent))
-    }
+      }
       .padding()
     }
     .background(
       AngularGradient(
         gradient: Gradient(
-        colors: [Color.dark, Color.light]),
+          colors: [Color.dark, Color.light]),
         center: .topLeading,
         startAngle: .degrees(90),
         endAngle: .degrees(20))

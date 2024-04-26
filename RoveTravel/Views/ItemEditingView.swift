@@ -7,7 +7,6 @@ import SwiftUI
 
 struct ItemEditingView: View {
   @Binding var item: Item
-
   var body: some View {
     Form {
       Section(header: Text("Item Name")) {

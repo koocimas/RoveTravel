@@ -56,15 +56,14 @@ class CurrencyModel: ObservableObject {
       print(error)
     }
   }
-
   var currencyApiKey: String {
-      guard let filePath = Bundle.main.path(forResource: "Currency-Info", ofType: "plist") else {
-        fatalError("Couldn't find file 'Currency-Info.plist'.")
-      }
-      let plist = NSDictionary(contentsOfFile: filePath)
-      guard let value = plist?.object(forKey: "API_KEY") as? String else {
-        fatalError("Couldn't find key 'API_KEY' in 'Currency-Info.plist'.")
-      }
-      return value
+    guard let filePath = Bundle.main.path(forResource: "Currency-Info", ofType: "plist") else {
+      fatalError("Couldn't find file 'Currency-Info.plist'.")
+    }
+    let plist = NSDictionary(contentsOfFile: filePath)
+    guard let value = plist?.object(forKey: "API_KEY") as? String else {
+      fatalError("Couldn't find key 'API_KEY' in 'Currency-Info.plist'.")
+    }
+    return value
   }
 }

@@ -10,7 +10,6 @@ struct RowView: View {
   @State var isAnimating = false
   @Binding var completed: Bool
   var item: Item
-
   var body: some View {
     HStack {
       Text(item.name)
@@ -19,16 +18,18 @@ struct RowView: View {
       Spacer()
       Button(action: {
         withAnimation(.easeInOut(duration: 0.75)) {
-            isAnimating.toggle()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
-                tripPlannerManager.toggleItemCompletion(item: item)
-            }
+          isAnimating.toggle()
+          DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+            tripPlannerManager.toggleItemCompletion(item: item)
+          }
         }
-        completed.toggle()}){
-        Image(systemName: item.completed == isAnimating ? "square.dotted" : "checkmark")
-          .fontWeight(.light)
-      }
-      .buttonStyle(BorderlessButtonStyle())
+        // swiftlint:disable multiple_closures_with_trailing_closure
+        completed.toggle()})
+      { Image(systemName: item.completed == isAnimating ? "square.dotted" : "checkmark")
+            .fontWeight(.light)
+          // swiftlint:enable multiple_closures_with_trailing_closure
+        }
+        .buttonStyle(BorderlessButtonStyle())
     }.lineLimit(2)
   }
 }

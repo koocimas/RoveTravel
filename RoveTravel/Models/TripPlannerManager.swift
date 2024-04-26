@@ -60,15 +60,15 @@ class TripPlannerManager: ObservableObject {
   }
 }
 extension TripPlannerManager: Identifiable, Hashable {
-    var identifier: String {
-            return UUID().uuidString
-        }
-    public func hash(into hasher: inout Hasher) {
-            return hasher.combine(identifier)
-        }
-    static func == (lhs: TripPlannerManager, rhs: TripPlannerManager) -> Bool {
-        if lhs.items == rhs.items && lhs.addingItem == rhs.addingItem {
-        }
-        return true
+  var identifier: String {
+    return UUID().uuidString
+  }
+  public func hash(into hasher: inout Hasher) {
+    return hasher.combine(identifier)
+  }
+  static func == (lhs: TripPlannerManager, rhs: TripPlannerManager) -> Bool {
+    if lhs.items == rhs.items && lhs.addingItem == rhs.addingItem {
     }
+    return true
+  }
 }

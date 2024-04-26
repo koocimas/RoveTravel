@@ -53,14 +53,14 @@ class NewsManager: ObservableObject {
   }
 
   var newsApiKey: String {
-      guard let filePath = Bundle.main.path(forResource: "News-Info", ofType: "plist") else {
-        fatalError("Couldn't find file 'News-Info.plist'.")
-      }
-      let plist = NSDictionary(contentsOfFile: filePath)
-      guard let value = plist?.object(forKey: "API_KEY") as? String else {
-        fatalError("Couldn't find key 'API_KEY' in 'News-Info.plist'.")
-      }
-      return value
+    guard let filePath = Bundle.main.path(forResource: "News-Info", ofType: "plist") else {
+      fatalError("Couldn't find file 'News-Info.plist'.")
+    }
+    let plist = NSDictionary(contentsOfFile: filePath)
+    guard let value = plist?.object(forKey: "API_KEY") as? String else {
+      fatalError("Couldn't find key 'API_KEY' in 'News-Info.plist'.")
+    }
+    return value
   }
 
 }

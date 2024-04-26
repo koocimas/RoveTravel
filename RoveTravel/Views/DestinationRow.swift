@@ -12,7 +12,7 @@ struct DestinationRow: View {
   var body: some View {
     NavigationLink("\(destination.city), \(destination.country)",
                    destination: DestinationPortalView(destination: destination,
-                   timeResults: timeResults))
+                                                      timeResults: timeResults))
     .foregroundStyle(Color.accentColor)
   }
 }

@@ -10,7 +10,6 @@ struct NewsView: View {
   @State private var sheetPresented: Bool = false
   @State private var selectedNews: Article?
   var destination: Destination
-
   var body: some View {
     VStack {
       Text("News Feed")
