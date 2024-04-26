@@ -13,7 +13,7 @@ class NewsManager: ObservableObject {
     do {
       let apiKey = newsApiKey
       let query = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-      let urlString = "https://newsapi.org/v2/everything?q=\(query)&pageSize=1&language=en"
+      let urlString = "https://newsapi.org/v2/everything?q=\(query)&pageSize=10&language=en"
       guard let url = URL(string: urlString) else {
         print("Error here")
         return
@@ -36,7 +36,7 @@ class NewsManager: ObservableObject {
             self.articles = decodedResponse.articles ?? []
           }
         } else {
-          print("HTTP status code: \(httpResponse.statusCode)")
+          print("HTTP status code for news: \(httpResponse.statusCode)")
         }
       } catch {
         print("Error fetching data: \(error)")

@@ -23,7 +23,6 @@ class CurrencyModel: ObservableObject {
       }
       var request = URLRequest(url: url)
       request.httpMethod = "GET"
-      // request.setValue(apiKey, forHTTPHeaderField: "Authorization")
       request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization"
       )
       do {
@@ -41,7 +40,7 @@ class CurrencyModel: ObservableObject {
             self.conversionResult = decodedResponse.conversionResult
           }
         } else {
-          print("HTTP status code: \(httpResponse.statusCode)")
+          print("HTTP status code for currency: \(httpResponse.statusCode)")
         }
       } catch {
         print("Error fetching data: \(error)")
