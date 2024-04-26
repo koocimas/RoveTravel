@@ -24,12 +24,14 @@ struct RowView: View {
           }
         }
         // swiftlint:disable multiple_closures_with_trailing_closure
-        completed.toggle()})
+        // swiftlint:disable opening_brace
+        completed.toggle() })
       { Image(systemName: item.completed == isAnimating ? "square.dotted" : "checkmark")
-            .fontWeight(.light)
-          // swiftlint:enable multiple_closures_with_trailing_closure
-        }
-        .buttonStyle(BorderlessButtonStyle())
+          .fontWeight(.light)
+        // swiftlint:enable multiple_closures_with_trailing_closure
+        // swiftlint:enable opening_brace
+      }
+      .buttonStyle(BorderlessButtonStyle())
     }.lineLimit(2)
   }
 }
