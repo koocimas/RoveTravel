@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB13233E2BDAF48300E3B901 /* RoveTravelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB13233D2BDAF48300E3B901 /* RoveTravelUITestsLaunchTests.swift */; };
+		EB1323472BDAFD2000E3B901 /* MainViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1323462BDAFD2000E3B901 /* MainViewUITests.swift */; };
+		EB13234F2BDB024000E3B901 /* RoveTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB13234E2BDB024000E3B901 /* RoveTravelTests.swift */; };
 		EB40A7752BDAD6820049A659 /* RoveTravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7742BDAD6820049A659 /* RoveTravelApp.swift */; };
 		EB40A7772BDAD6820049A659 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7762BDAD6820049A659 /* ContentView.swift */; };
 		EB40A7792BDAD6830049A659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB40A7782BDAD6830049A659 /* Assets.xcassets */; };
@@ -36,7 +39,29 @@
 		EB40A7B42BDAD98E0049A659 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7B32BDAD98E0049A659 /* FileManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		EB13233F2BDAF48300E3B901 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB40A7692BDAD6820049A659 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB40A7702BDAD6820049A659;
+			remoteInfo = RoveTravel;
+		};
+		EB1323502BDB024000E3B901 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB40A7692BDAD6820049A659 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB40A7702BDAD6820049A659;
+			remoteInfo = RoveTravel;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		EB1323392BDAF48300E3B901 /* RoveTravelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoveTravelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB13233D2BDAF48300E3B901 /* RoveTravelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoveTravelUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EB1323462BDAFD2000E3B901 /* MainViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewUITests.swift; path = RoveTravelUITests/MainViewUITests.swift; sourceTree = SOURCE_ROOT; };
+		EB13234C2BDB024000E3B901 /* RoveTravelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoveTravelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB13234E2BDB024000E3B901 /* RoveTravelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoveTravelTests.swift; sourceTree = "<group>"; };
 		EB40A7712BDAD6820049A659 /* RoveTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoveTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB40A7742BDAD6820049A659 /* RoveTravelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoveTravelApp.swift; sourceTree = "<group>"; };
 		EB40A7762BDAD6820049A659 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +94,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EB1323362BDAF48300E3B901 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB1323492BDB024000E3B901 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EB40A76E2BDAD6820049A659 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,10 +118,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB13233A2BDAF48300E3B901 /* RoveTravelUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EB1323462BDAFD2000E3B901 /* MainViewUITests.swift */,
+				EB13233D2BDAF48300E3B901 /* RoveTravelUITestsLaunchTests.swift */,
+			);
+			path = RoveTravelUITests;
+			sourceTree = "<group>";
+		};
+		EB13234D2BDB024000E3B901 /* RoveTravelTests */ = {
+			isa = PBXGroup;
+			children = (
+				EB13234E2BDB024000E3B901 /* RoveTravelTests.swift */,
+			);
+			path = RoveTravelTests;
+			sourceTree = "<group>";
+		};
 		EB40A7682BDAD6820049A659 = {
 			isa = PBXGroup;
 			children = (
 				EB40A7732BDAD6820049A659 /* RoveTravel */,
+				EB13233A2BDAF48300E3B901 /* RoveTravelUITests */,
+				EB13234D2BDB024000E3B901 /* RoveTravelTests */,
 				EB40A7722BDAD6820049A659 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				EB40A7712BDAD6820049A659 /* RoveTravel.app */,
+				EB1323392BDAF48300E3B901 /* RoveTravelUITests.xctest */,
+				EB13234C2BDB024000E3B901 /* RoveTravelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +225,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EB1323382BDAF48300E3B901 /* RoveTravelUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB1323412BDAF48300E3B901 /* Build configuration list for PBXNativeTarget "RoveTravelUITests" */;
+			buildPhases = (
+				EB1323352BDAF48300E3B901 /* Sources */,
+				EB1323362BDAF48300E3B901 /* Frameworks */,
+				EB1323372BDAF48300E3B901 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB1323402BDAF48300E3B901 /* PBXTargetDependency */,
+			);
+			name = RoveTravelUITests;
+			productName = RoveTravelUITests;
+			productReference = EB1323392BDAF48300E3B901 /* RoveTravelUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		EB13234B2BDB024000E3B901 /* RoveTravelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB1323542BDB024100E3B901 /* Build configuration list for PBXNativeTarget "RoveTravelTests" */;
+			buildPhases = (
+				EB1323482BDB024000E3B901 /* Sources */,
+				EB1323492BDB024000E3B901 /* Frameworks */,
+				EB13234A2BDB024000E3B901 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB1323512BDB024000E3B901 /* PBXTargetDependency */,
+			);
+			name = RoveTravelTests;
+			productName = RoveTravelTests;
+			productReference = EB13234C2BDB024000E3B901 /* RoveTravelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		EB40A7702BDAD6820049A659 /* RoveTravel */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB40A77F2BDAD6830049A659 /* Build configuration list for PBXNativeTarget "RoveTravel" */;
@@ -193,6 +289,14 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					EB1323382BDAF48300E3B901 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = EB40A7702BDAD6820049A659;
+					};
+					EB13234B2BDB024000E3B901 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = EB40A7702BDAD6820049A659;
+					};
 					EB40A7702BDAD6820049A659 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -212,11 +316,27 @@
 			projectRoot = "";
 			targets = (
 				EB40A7702BDAD6820049A659 /* RoveTravel */,
+				EB1323382BDAF48300E3B901 /* RoveTravelUITests */,
+				EB13234B2BDB024000E3B901 /* RoveTravelTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EB1323372BDAF48300E3B901 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB13234A2BDB024000E3B901 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EB40A76F2BDAD6820049A659 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -247,11 +367,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=/opt/homebrew/bin:$PATH\nif [ -f ~/com.raywenderlich.swiftlint.yml ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint --no-cache --config ~/com.raywenderlich.swiftlint.yml\n  fi\nfi\n\n";
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EB1323352BDAF48300E3B901 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB13233E2BDAF48300E3B901 /* RoveTravelUITestsLaunchTests.swift in Sources */,
+				EB1323472BDAFD2000E3B901 /* MainViewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB1323482BDB024000E3B901 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB13234F2BDB024000E3B901 /* RoveTravelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EB40A76D2BDAD6820049A659 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -284,7 +421,94 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		EB1323402BDAF48300E3B901 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB40A7702BDAD6820049A659 /* RoveTravel */;
+			targetProxy = EB13233F2BDAF48300E3B901 /* PBXContainerItemProxy */;
+		};
+		EB1323512BDB024000E3B901 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB40A7702BDAD6820049A659 /* RoveTravel */;
+			targetProxy = EB1323502BDB024000E3B901 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		EB1323422BDAF48300E3B901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 47ARCK7GMK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scook.RoveTravelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RoveTravel;
+			};
+			name = Debug;
+		};
+		EB1323432BDAF48300E3B901 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 47ARCK7GMK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scook.RoveTravelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RoveTravel;
+			};
+			name = Release;
+		};
+		EB1323522BDB024100E3B901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 47ARCK7GMK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scook.RoveTravelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoveTravel.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RoveTravel";
+			};
+			name = Debug;
+		};
+		EB1323532BDB024100E3B901 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 47ARCK7GMK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scook.RoveTravelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoveTravel.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RoveTravel";
+			};
+			name = Release;
+		};
 		EB40A77D2BDAD6830049A659 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -414,6 +638,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RoveTravel/Preview Content\"";
 				DEVELOPMENT_TEAM = 47ARCK7GMK;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoveTravel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -443,6 +668,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RoveTravel/Preview Content\"";
 				DEVELOPMENT_TEAM = 47ARCK7GMK;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoveTravel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -465,6 +691,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EB1323412BDAF48300E3B901 /* Build configuration list for PBXNativeTarget "RoveTravelUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB1323422BDAF48300E3B901 /* Debug */,
+				EB1323432BDAF48300E3B901 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB1323542BDB024100E3B901 /* Build configuration list for PBXNativeTarget "RoveTravelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB1323522BDB024100E3B901 /* Debug */,
+				EB1323532BDB024100E3B901 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EB40A76C2BDAD6820049A659 /* Build configuration list for PBXProject "RoveTravel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -46,6 +46,7 @@ struct NewsView: View {
         .listRowBackground(Color.clear)
         .listRowSeparatorTint(Color.accentColor.opacity(0.3))
       }
+      .accessibilityIdentifier("newsList")
       .padding(.top, -40)
       .scrollContentBackground(.hidden)
       .sheet(isPresented: $sheetPresented) { [selectedNews] in

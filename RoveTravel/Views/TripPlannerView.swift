@@ -32,7 +32,7 @@ struct TripPlannerView: View {
               .opacity(0.9)
               .foregroundStyle(Color.accentColor)
               .font(.title)
-          }
+          }.accessibilityIdentifier("Add")
         }) {
           EmptyView()
         }

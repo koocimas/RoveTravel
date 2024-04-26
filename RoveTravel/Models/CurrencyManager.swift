@@ -6,16 +6,16 @@
 import Foundation
 
 class CurrencyModel: ObservableObject {
-  @Published var amount: Double = 0
-  @Published var baseCode: String = ""
-  @Published var targetCode: String = ""
+  @Published var amount: Double? = 0
+  @Published var baseCode: String? = ""
+  @Published var targetCode: String? = ""
   @Published var conversionResult = 0.00
   @Published var conversionRate = 0.00
 
   func fetchConversion() async throws {
     do {
       let apiKey = currencyApiKey
-      let urlString = "https://v6.exchangerate-api.com/v6/\(apiKey)/pair/\(baseCode)/\(targetCode)/\(amount)"
+      let urlString = "https://v6.exchangerate-api.com/v6/\(apiKey)/pair/\(baseCode ?? "USD")/\(targetCode ?? "USD")/\(amount ?? 0)"
       guard let url = URL(string: urlString) else {
         print("Error here")
         return
@@ -52,7 +52,6 @@ class CurrencyModel: ObservableObject {
         self.conversionResult = decodedResponse.conversionResult
       }
     } catch {
-      print("error there")
       print(error)
     }
   }

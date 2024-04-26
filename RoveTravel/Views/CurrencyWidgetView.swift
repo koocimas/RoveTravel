@@ -8,24 +8,18 @@ import SwiftUI
 struct CurrencyWidgetView: View {
   @Environment(\.locale) private var locale
   @ObservedObject var currencyModel = CurrencyModel()
-  @State private var amount: Double = 1.0
+  @State private var amount: Double? = 1.0
+  @State private var showErrorAlert = false
   var destination: Destination
-  private var convertedAmount: Double {
-    currencyModel.baseCode = baseCode
-    currencyModel.targetCode = destination.currencyCode
-    currencyModel.amount = amount
-    let conversion = amount * currencyModel.conversionRate
-    return conversion
-  }
-
-  private var conversionResults: Double {
+  var baseCode: String? = "USD"
+  private var conversionResults: Double? {
     let conversionResults = currencyModel.conversionResult
     return conversionResults
   }
   private var baseCurrencyFormatter: NumberFormatter {
     let formatter = NumberFormatter()
     formatter.numberStyle = .currency
-    formatter.currencyCode = "\(baseCode)"
+    formatter.currencyCode = "\(baseCode ?? "USD")"
     formatter.currencySymbol = "$"
     formatter.minimumFractionDigits = 2
     formatter.maximumFractionDigits = 2
@@ -33,18 +27,6 @@ struct CurrencyWidgetView: View {
     formatter.usesGroupingSeparator = true
     return formatter
   }
-  private var targetCurrencyFormatter: NumberFormatter {
-    let formatter = NumberFormatter()
-    formatter.numberStyle = .currency
-    formatter.currencyCode = "\(destination.currencyCode)"
-    formatter.currencySymbol = "$"
-    formatter.minimumFractionDigits = 2
-    formatter.maximumFractionDigits = 2
-    formatter.groupingSeparator = "."
-    formatter.usesGroupingSeparator = true
-    return formatter
-  }
-  var baseCode = "USD"
 
   var body: some View {
     VStack {
@@ -56,6 +38,7 @@ struct CurrencyWidgetView: View {
         .padding(.bottom, -10)
       HStack {
         TextField("Enter Amount", value: $amount, formatter: baseCurrencyFormatter)
+          .accessibilityIdentifier("amountEntered")
           .keyboardType(.numbersAndPunctuation)
           .foregroundStyle(.accent)
           .opacity(0.5)
@@ -68,20 +51,20 @@ struct CurrencyWidgetView: View {
           .font(.body)
           .fontWeight(.light)
           .multilineTextAlignment(.center)
-        Text("\(conversionResults, specifier: "%.2f")")
+        Text("\(conversionResults ?? 0.0, specifier: "%.2f")")
           .foregroundStyle(.accent)
           .font(.body)
           .fontWeight(.light)
           .multilineTextAlignment(.trailing)
       }
       HStack {
-        Text(baseCode)
+        Text(baseCode ?? "USD")
           .foregroundStyle(.accent)
           .font(.body)
           .fontWeight(.light)
           .multilineTextAlignment(.leading)
         Spacer()
-        Text(destination.currencyCode)
+        Text(destination.currencyCode ?? "USD")
           .foregroundStyle(.accent)
           .font(.body)
           .fontWeight(.light)
@@ -90,21 +73,28 @@ struct CurrencyWidgetView: View {
       Button("Convert") {
         runConversion()
       }
+      .accessibilityIdentifier("convertButton")
       .buttonStyle(.bordered)
       .padding(.top, -30)
     }
+    .alert(isPresented: $showErrorAlert) {
+        Alert(title: Text("Error"), message: Text("Failed to fetch conversion. Check your network connection or try again later."), dismissButton: .default(Text("OK")))
+    }
     .padding()
     .background(RoundedRectangle(cornerRadius: 20)
-      .fill(          LinearGradient(gradient: Gradient(colors: [.light, Color("DarkColor")]), startPoint: .leading, endPoint: .trailing))
+      .fill(LinearGradient(gradient: Gradient(colors: [.light, Color("DarkColor")]), startPoint: .leading, endPoint: .trailing))
     )
   }
   func runConversion() {
     Task {
-      currencyModel.baseCode = baseCode
-      currencyModel.targetCode = destination.currencyCode
-      currencyModel.amount = amount
+      currencyModel.baseCode = baseCode ?? "USD"
+      currencyModel.targetCode = destination.currencyCode 
+      currencyModel.amount = amount ?? 0.0
       do {
         try await currencyModel.fetchConversion()
+      } catch {
+        print("Error fetching conversion: \(error)")
+        showErrorAlert = true
       }
     }
   }

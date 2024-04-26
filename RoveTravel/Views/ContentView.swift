@@ -19,6 +19,7 @@ struct ContentView: View {
             .foregroundStyle(Color.accentColor)
         }
       }
+      .accessibilityIdentifier("destinationsList")
       .background(Color.dark)
       .listStyle(.plain)
       .navigationTitle("Where to Rove")

@@ -10,7 +10,7 @@ struct Destination: Identifiable, Hashable {
   var id: Int
   var city: String
   var country: String
-  var currencyCode: String
+  var currencyCode: String? 
   var latitude: Double
   var longitude: Double
   var location: CLLocation {

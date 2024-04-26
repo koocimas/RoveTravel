@@ -8,8 +8,8 @@ import SwiftUI
 struct DestinationPortalView: View {
   @State var destination: Destination
   @State var timeResults: TimeResults
-  @StateObject var tripPlannerManager = TripPlannerManager()
-  @StateObject var timeManager = TimeManager()
+  @ObservedObject var tripPlannerManager = TripPlannerManager()
+  @ObservedObject var timeManager = TimeManager()
 
   init(destination: Destination, timeResults: TimeResults, tripPlannerManager: TripPlannerManager = TripPlannerManager()) {
     self.destination = destination
@@ -24,10 +24,12 @@ struct DestinationPortalView: View {
   var body: some View {
     TabView {
       SnapshotView(destination: destination, timeResults: timeResults)
+        .accessibilityIdentifier("Snapshot")
         .tabItem {
           Label("Snapshot", systemImage: "dot.circle.viewfinder")
         }
        TripPlannerView(tripPlannerManager: TripPlannerManager(), destination: destination)
+        .accessibilityIdentifier("Trip Planner")
         .tabItem {
           Label("Trip Planner", systemImage: "pencil.and.list.clipboard")
         }
