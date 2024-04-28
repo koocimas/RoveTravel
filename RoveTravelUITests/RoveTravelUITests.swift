@@ -23,8 +23,8 @@ final class RoveTravelUITests: XCTestCase {
   override func tearDownWithError() throws {
   }
   func testDestinationButton() {
-    let destinationButton = app.buttons["Amman, Jordan"]
-    destinationButton.tap()
-    XCTAssertTrue(destinationButton.exists)
-  }
+      let destinationButton = app.buttons["Amman, Jordan"]
+      XCTAssertTrue(destinationButton.exists)
+      destinationButton.tap()
+    }
 }
