@@ -12,8 +12,8 @@
 		EB13234F2BDB024000E3B901 /* TimeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB13234E2BDB024000E3B901 /* TimeUnitTests.swift */; };
 		EB1323562BDB57F200E3B901 /* TripPlannerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1323552BDB57F200E3B901 /* TripPlannerUnitTests.swift */; };
 		EB2D931E2BDC556C00D68074 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB2D931D2BDC556C00D68074 /* Launch Screen.storyboard */; };
-		EB2D93262BDDEAFB00D68074 /* News-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB2D93252BDDEAFB00D68074 /* News-Info.plist */; };
 		EB2D932A2BDDEB3700D68074 /* Currency-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB2D93292BDDEB3700D68074 /* Currency-Info.plist */; };
+		EB2D932E2BDDEDAD00D68074 /* News-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB2D932D2BDDEDAD00D68074 /* News-Info.plist */; };
 		EB40A7752BDAD6820049A659 /* RoveTravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7742BDAD6820049A659 /* RoveTravelApp.swift */; };
 		EB40A7772BDAD6820049A659 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7762BDAD6820049A659 /* ContentView.swift */; };
 		EB40A7792BDAD6830049A659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB40A7782BDAD6830049A659 /* Assets.xcassets */; };
@@ -66,8 +66,8 @@
 		EB13234E2BDB024000E3B901 /* TimeUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnitTests.swift; sourceTree = "<group>"; };
 		EB1323552BDB57F200E3B901 /* TripPlannerUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlannerUnitTests.swift; sourceTree = "<group>"; };
 		EB2D931D2BDC556C00D68074 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		EB2D93252BDDEAFB00D68074 /* News-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "News-Info.plist"; sourceTree = "<group>"; };
 		EB2D93292BDDEB3700D68074 /* Currency-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Currency-Info.plist"; path = "../../Currency-Info.plist"; sourceTree = "<group>"; };
+		EB2D932D2BDDEDAD00D68074 /* News-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "News-Info.plist"; sourceTree = "<group>"; };
 		EB40A7712BDAD6820049A659 /* RoveTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoveTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB40A7742BDAD6820049A659 /* RoveTravelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoveTravelApp.swift; sourceTree = "<group>"; };
 		EB40A7762BDAD6820049A659 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 				EB40A7892BDAD7250049A659 /* CurrencyResults.swift */,
 				EB40A78B2BDAD73E0049A659 /* NewsResults.swift */,
 				EB40A7982BDAD7E20049A659 /* TripPlannerItem.swift */,
-				EB2D93252BDDEAFB00D68074 /* News-Info.plist */,
+				EB2D932D2BDDEDAD00D68074 /* News-Info.plist */,
 				EB2D93292BDDEB3700D68074 /* Currency-Info.plist */,
 				EB2D931D2BDC556C00D68074 /* Launch Screen.storyboard */,
 				EB40A7782BDAD6830049A659 /* Assets.xcassets */,
@@ -348,9 +348,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB40A77C2BDAD6830049A659 /* Preview Assets.xcassets in Resources */,
-				EB2D93262BDDEAFB00D68074 /* News-Info.plist in Resources */,
 				EB2D931E2BDC556C00D68074 /* Launch Screen.storyboard in Resources */,
 				EB2D932A2BDDEB3700D68074 /* Currency-Info.plist in Resources */,
+				EB2D932E2BDDEDAD00D68074 /* News-Info.plist in Resources */,
 				EB40A7792BDAD6830049A659 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
