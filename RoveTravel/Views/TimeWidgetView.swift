@@ -56,11 +56,11 @@ struct TimeWidgetView: View {
       }
     }
     .padding([.horizontal, .top])
-    .padding(.bottom, 5)
+    .padding(.bottom, Constants.General.timeWidgetPadding)
     .frame(maxWidth: .infinity)
-    .background(RoundedRectangle(cornerRadius: 20)
+    .background(RoundedRectangle(cornerRadius: Constants.General.roundRectCornerRadius)
       .fill(LinearGradient(
-        gradient: Gradient(colors: [.light, Color("DarkColor")]),
+        gradient: Gradient(colors: [.light, .dark]),
         startPoint: .leading,
         endPoint: .trailing))
     )

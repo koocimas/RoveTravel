@@ -18,9 +18,9 @@ struct SnapshotView: View {
     .padding()
     .background(
       AngularGradient(
-        gradient: Gradient(colors: [Color("DarkColor"), .light]),
-        center: .topLeading, startAngle: .degrees(90),
-        endAngle: .degrees(20))
+        gradient: Gradient(colors: [.dark, .light]),
+        center: .topLeading, startAngle: .degrees(Constants.General.startAngle),
+        endAngle: .degrees(Constants.General.endAngle))
     )
   }
 }

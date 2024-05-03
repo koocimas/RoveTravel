@@ -9,7 +9,7 @@ struct ContentView: View {
   var destinations: [Destination] = Destination.previewDestination
   var destination: Destination
   var timeResults: TimeResults
-
+  
   var body: some View {
     NavigationStack {
       List {

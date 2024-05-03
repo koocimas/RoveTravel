@@ -21,7 +21,7 @@ struct NewItemView: View {
         }
         Section(header: Text("Item Notes")) {
           TextField("Item Notes", text: $notes, axis: .vertical)
-            .lineLimit(5...)
+            .lineLimit(Constants.General.notesLineLimit...)
             .fontWeight(.light)
             .listRowBackground(Color.light)
         }

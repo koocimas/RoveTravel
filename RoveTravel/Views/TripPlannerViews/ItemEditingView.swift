@@ -7,6 +7,7 @@ import SwiftUI
 
 struct ItemEditingView: View {
   @Environment(\.presentationMode) var presentationMode
+  @ObservedObject var tripPlannerManager: TripPlannerManager
   @Binding var item: Item
   var body: some View {
     NavigationStack {
@@ -19,7 +20,7 @@ struct ItemEditingView: View {
         }
         Section(header: Text("Item Notes")) {
           TextField("Item Notes", text: $item.notes, axis: .vertical)
-            .lineLimit(5...)
+            .lineLimit(Constants.General.notesLineLimit...)
             .foregroundStyle(.accent)
             .fontWeight(.light)
             .listRowBackground(Color.light)
@@ -32,6 +33,17 @@ struct ItemEditingView: View {
         }
       }
       .toolbar {
+        ToolbarItem(placement: .navigationBarLeading) {
+          Button(action: {
+            tripPlannerManager.removeItem(item: item)
+            self.presentationMode.wrappedValue.dismiss()
+
+          }, label: {
+            Text("Delete")
+              .fontWeight(.light)
+              .foregroundStyle(.accent)
+          })
+        }
         ToolbarItem(placement: .principal) {
           Text("Edit Item")
             .font(.title3)
@@ -44,6 +56,7 @@ struct ItemEditingView: View {
           }, label: {
             Text("Done")
               .fontWeight(.light)
+              .foregroundStyle(.accent)
           })
         }
       }
@@ -51,13 +64,5 @@ struct ItemEditingView: View {
       .scrollContentBackground(.hidden)
       .background(.dark)
     }
-  }
-}
-
-struct ItemEditingView_Previews: PreviewProvider {
-  static var previews: some View {
-    ItemEditingView(
-      item: .constant(Item(name: "", destinationID: "Amman"))
-    )
   }
 }

@@ -12,7 +12,6 @@ struct TripPlannerView: View {
   @State var sheetPresented = false
   @State private var selectedItem: Item?
   var destination: Destination
-
   var body: some View {
     List {
       ForEach(tripPlannerManager.items.filter({($0).destinationID.contains(destination.city)}), id: \.self) { item in
@@ -23,7 +22,7 @@ struct TripPlannerView: View {
         }
         .listRowBackground(
           LinearGradient(
-            gradient: Gradient(colors: [.light, Color("DarkColor")]),
+            gradient: Gradient(colors: [.light, .dark]),
             startPoint: .leading,
             endPoint: .trailing)
         )
@@ -35,8 +34,8 @@ struct TripPlannerView: View {
             // swiftlint:disable multiple_closures_with_trailing_closure
             self.sheetPresented = true }) {
               Image(systemName: "plus.circle.fill")
-                .opacity(0.9)
-                .foregroundStyle(Color.accentColor)
+                .opacity(Constants.General.addItemButtonOpacity)
+                .foregroundStyle(Color.accent)
                 .font(.title)
               // swiftlint:enable multiple_closures_with_trailing_closure
             }
@@ -44,11 +43,26 @@ struct TripPlannerView: View {
         EmptyView()
       }
     }
+    .overlay(Group {
+      let destinationItems = tripPlannerManager.items.filter({($0).destinationID.contains(destination.city)})
+      if destinationItems.isEmpty {
+        Button(
+          action: {
+            // swiftlint:disable multiple_closures_with_trailing_closure
+            self.sheetPresented = true }) {
+              Text("You have no trip planning items... \nGet started!")
+                .fontWeight(.light)
+                .foregroundStyle(Color.accent)
+                .multilineTextAlignment(.center)
+              // swiftlint:enable multiple_closures_with_trailing_closure
+            }
+      }
+    })
     .background(
       AngularGradient(
-        gradient: Gradient(colors: [Color("DarkColor"), .light]),
+        gradient: Gradient(colors: [.dark, .light]),
         center: .topLeading,
-        startAngle: .degrees(90), endAngle: .degrees(20))
+        startAngle: .degrees(Constants.General.startAngle), endAngle: .degrees(Constants.General.endAngle))
     )
     .listStyle(InsetGroupedListStyle())
     .scrollContentBackground(.hidden)
@@ -56,8 +70,10 @@ struct TripPlannerView: View {
       NewItemView(tripPlannerManager: self.tripPlannerManager, destination: destination)
     }
     .sheet(item: $selectedItem) {selectedItem in
-      ItemEditingView(item: $tripPlannerManager.items
-        .first(where: { $0.id == selectedItem.id })!)
+      ItemEditingView(
+        tripPlannerManager: self.tripPlannerManager,
+        item: $tripPlannerManager.items
+          .first(where: { $0.id == selectedItem.id })!)
     }
   }
 }

@@ -30,24 +30,24 @@ struct NewsView: View {
                 image
                   .resizable()
                   .aspectRatio(contentMode: .fit)
-                  .frame(width: 75, height: 75)
+                  .frame(width: Constants.General.newsImage, height: Constants.General.newsImage)
               } placeholder: {
                 ProgressView()
               }
               Text(article.title ?? "News Article Unavailable")
-                .foregroundStyle(Color.accentColor)
+                .foregroundStyle(Color.accent)
                 .fontWeight(.light)
-                .font(.footnote)
-                .lineLimit(3)
+                .font(.body)
+                .lineLimit(Constants.General.newsTitleLineLimit)
             }
           }
         }
-        .padding(-10)
+        .padding(Constants.General.newsTitlePadding)
         .listRowBackground(Color.clear)
-        .listRowSeparatorTint(Color.accentColor.opacity(0.3))
+        .listRowSeparatorTint(Color.accentColor.opacity(Constants.General.newsSeparatorLineOpacity))
       }
       .accessibilityIdentifier("newsList")
-      .padding(.top, -40)
+      .padding(.top, Constants.General.newsWidgetPadding)
       .scrollContentBackground(.hidden)
       .sheet(isPresented: $sheetPresented) { [selectedNews] in
         if let selectedNews {
@@ -55,11 +55,11 @@ struct NewsView: View {
         }
       }
     }
-    .frame(minHeight: 350, maxHeight: .infinity)
-    .background(RoundedRectangle(cornerRadius: 20)
+    .frame(minHeight: Constants.General.rowFrameMaxHeight, maxHeight: .infinity)
+    .background(RoundedRectangle(cornerRadius: Constants.General.roundRectCornerRadius)
       .fill(
         LinearGradient(
-          gradient: Gradient(colors: [.light, Color("DarkColor")]),
+          gradient: Gradient(colors: [.light, .dark]),
           startPoint: .leading,
           endPoint: .trailing))
         .ignoresSafeArea()

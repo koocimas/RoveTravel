@@ -10,10 +10,9 @@ class NewsManager: ObservableObject {
   @Published var searchText: String = "Amman"
 
   func fetchNews() async throws {
-    do {
       let apiKey = newsApiKey
       let query = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-      let urlString = "https://newsapi.org/v2/everything?q=\(query)&pageSize=10&language=en"
+      let urlString = "https://newsapi.org/v2/everything?q=\(query)&pageSize=1&language=en"
       guard let url = URL(string: urlString) else {
         print("Error here")
         return
@@ -23,13 +22,12 @@ class NewsManager: ObservableObject {
       request.setValue(apiKey, forHTTPHeaderField: "X-API-Key")
 
       do {
-        let (data, response) = try await URLSession.shared.data(from: url)
+        let (data, response) = try await URLSession.shared.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse else {
           print("Error here")
           return
         }
-
         if (200..<300).contains(httpResponse.statusCode) {
           try await MainActor.run {
             let decodedResponse = try JSONDecoder().decode(NewsResults.self, from: data)
@@ -41,15 +39,6 @@ class NewsManager: ObservableObject {
       } catch {
         print("Error fetching data: \(error)")
       }
-      let (data, _) = try await URLSession.shared.data(for: request)
-      try await MainActor.run {
-        let decodedResponse = try JSONDecoder().decode(NewsResults.self, from: data)
-        self.articles = decodedResponse.articles ?? []
-      }
-    } catch {
-      print("error there")
-      print(error)
-    }
   }
 
   var newsApiKey: String {
