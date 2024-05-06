@@ -19,7 +19,7 @@ struct DestinationPortalView: View {
     self.timeManager.longitude = Float(destination.longitude)
     UITabBarItem.appearance().badgeColor = .badge
     UINavigationBar.appearance().largeTitleTextAttributes =
-    [.font: UIFont.systemFont(ofSize: 30, weight: .light, width: .expanded),
+    [.font: UIFont.systemFont(ofSize: Constants.General.titleSize, weight: .light, width: .expanded),
      .foregroundColor: UIColor.accent]
     UINavigationBar.appearance().barTintColor = UIColor.dark
     UITabBar.appearance().barTintColor = UIColor.dark

@@ -17,9 +17,9 @@ struct RowView: View {
         .foregroundStyle(.accent)
       Spacer()
       Button(action: {
-        withAnimation(.easeInOut(duration: 0.75)) {
+        withAnimation(.easeInOut(duration: Constants.General.checkmarkCompletionAnimation)) {
           isAnimating.toggle()
-          DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+          DispatchQueue.main.asyncAfter(deadline: .now() + Constants.General.checkmarkCompletionAnimation) {
             tripPlannerManager.toggleItemCompletion(item: item)
           }
         }
@@ -32,6 +32,6 @@ struct RowView: View {
         // swiftlint:enable opening_brace
       }
       .buttonStyle(BorderlessButtonStyle())
-    }.lineLimit(2)
+    }.lineLimit(Constants.General.itemRowLineLimit)
   }
 }

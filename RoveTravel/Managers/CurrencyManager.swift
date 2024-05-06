@@ -5,7 +5,7 @@
 
 import Foundation
 
-class CurrencyModel: ObservableObject {
+class CurrencyManager: ObservableObject {
   @Published var amount: Double? = 0
   @Published var baseCode: String? = ""
   @Published var targetCode: String? = ""
@@ -13,7 +13,6 @@ class CurrencyModel: ObservableObject {
   @Published var conversionRate = 0.00
 
   func fetchConversion() async throws {
-    do {
       let apiKey = currencyApiKey
       let urlString =
       "https://v6.exchangerate-api.com/v6/pair/\(baseCode ?? "USD")/\(targetCode ?? "USD")/\(amount ?? 0)"
@@ -26,7 +25,7 @@ class CurrencyModel: ObservableObject {
       request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization"
       )
       do {
-        let (data, response) = try await URLSession.shared.data(from: url)
+        let (data, response) = try await URLSession.shared.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse else {
           print("Error here too")
@@ -45,16 +44,6 @@ class CurrencyModel: ObservableObject {
       } catch {
         print("Error fetching data: \(error)")
       }
-
-      let (data, _) = try await URLSession.shared.data(for: request)
-
-      let decodedResponse = try JSONDecoder().decode(CurrencyResults.self, from: data)
-      await MainActor.run {
-        self.conversionResult = decodedResponse.conversionResult
-      }
-    } catch {
-      print(error)
-    }
   }
   var currencyApiKey: String {
     guard let filePath = Bundle.main.path(forResource: "Currency-Info", ofType: "plist") else {

@@ -7,13 +7,13 @@ import SwiftUI
 
 struct CurrencyWidgetView: View {
   @Environment(\.locale) private var locale
-  @ObservedObject var currencyModel = CurrencyModel()
-  @State private var amount: Double? = 1.0
+  @ObservedObject var currencyManager = CurrencyManager()
+  @State private var amount: Double? = 1.00
   @State private var showErrorAlert = false
   var destination: Destination
   var baseCode: String? = "USD"
   private var conversionResults: Double? {
-    let conversionResults = currencyModel.conversionResult
+    let conversionResults = currencyManager.conversionResult
     return conversionResults
   }
   private var baseCurrencyFormatter: NumberFormatter {
@@ -34,15 +34,23 @@ struct CurrencyWidgetView: View {
         .font(.title3)
         .fontWeight(.light)
         .multilineTextAlignment(.center)
-        .padding(.bottom, -10)
       HStack {
-        TextField("Enter Amount", value: $amount, formatter: baseCurrencyFormatter)
+        TextField("Enter $(amount)", value: $amount, formatter: baseCurrencyFormatter)
           .keyboardType(.numbersAndPunctuation)
+          .submitLabel(.done)
+          .onSubmit {
+            runConversion()
+          }
+          .onAppear {
+            runConversion()
+          }
           .foregroundStyle(.accent)
-          .opacity(0.5)
+          .opacity(Constants.General.currencyTextFieldOpacity)
           .font(.body)
           .fontWeight(.light)
           .multilineTextAlignment(.leading)
+          .textFieldStyle(.roundedBorder)
+          .lineLimit(Constants.General.currencyTextFieldLineLimit)
         Spacer()
         Text("= \(conversionResults ?? 0.0, specifier: "%.2f")")
           .foregroundStyle(.accent)
@@ -63,11 +71,6 @@ struct CurrencyWidgetView: View {
           .fontWeight(.light)
           .multilineTextAlignment(.trailing)
       }
-      Button("Convert") {
-        runConversion()
-      }
-      .buttonStyle(.bordered)
-      .padding(.top, -30)
     }
     .alert(isPresented: $showErrorAlert) {
       Alert(
@@ -76,21 +79,21 @@ struct CurrencyWidgetView: View {
         dismissButton: .default(Text("OK")))
     }
     .padding()
-    .background(RoundedRectangle(cornerRadius: 20)
+    .background(RoundedRectangle(cornerRadius: Constants.General.roundRectCornerRadius)
       .fill(
         LinearGradient(
-          gradient: Gradient(colors: [.light, Color("DarkColor")]),
+          gradient: Gradient(colors: [.light, .dark]),
           startPoint: .leading,
           endPoint: .trailing))
     )
   }
   func runConversion() {
     Task {
-      currencyModel.baseCode = baseCode ?? "USD"
-      currencyModel.targetCode = destination.currencyCode
-      currencyModel.amount = amount ?? 0.0
+      currencyManager.baseCode = baseCode ?? "USD"
+      currencyManager.targetCode = destination.currencyCode
+      currencyManager.amount = amount ?? 0.0
       do {
-        try await currencyModel.fetchConversion()
+        try await currencyManager.fetchConversion()
       } catch {
         print("Error fetching conversion: \(error)")
         showErrorAlert = true

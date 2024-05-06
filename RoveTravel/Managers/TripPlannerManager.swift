@@ -21,6 +21,11 @@ class TripPlannerManager: ObservableObject {
   func addNewItem(name: String, destinationID: String) {
     items.append(Item(name: name, destinationID: destinationID))
   }
+  func removeItem(item: Item) {
+    if let index = items.firstIndex(where: { $0.id == item.id }) {
+      items.remove(at: index)
+    }
+  }
   func toggleItemCompletion(item: Item) {
     if let index = items.firstIndex(where: { $0.id == item.id }) {
       items[index].completed.toggle()

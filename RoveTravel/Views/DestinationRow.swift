@@ -7,13 +7,13 @@ import SwiftUI
 
 struct DestinationRow: View {
   @State var destination: Destination
+  @StateObject var timeManager = TimeManager()
   var timeResults: TimeResults
-
   var body: some View {
     NavigationLink("\(destination.city), \(destination.country)",
                    destination: DestinationPortalView(destination: destination,
                                                       timeResults: timeResults))
-    .foregroundStyle(Color.accentColor)
+    .foregroundStyle(Color.accent)
   }
 }
 

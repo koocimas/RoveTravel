@@ -14,18 +14,19 @@
 		EB2D931E2BDC556C00D68074 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB2D931D2BDC556C00D68074 /* Launch Screen.storyboard */; };
 		EB2D932A2BDDEB3700D68074 /* Currency-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB2D93292BDDEB3700D68074 /* Currency-Info.plist */; };
 		EB2D932E2BDDEDAD00D68074 /* News-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB2D932D2BDDEDAD00D68074 /* News-Info.plist */; };
+		EB2D93342BE3275600D68074 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D93332BE3275600D68074 /* Constants.swift */; };
 		EB40A7752BDAD6820049A659 /* RoveTravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7742BDAD6820049A659 /* RoveTravelApp.swift */; };
 		EB40A7772BDAD6820049A659 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7762BDAD6820049A659 /* ContentView.swift */; };
 		EB40A7792BDAD6830049A659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB40A7782BDAD6830049A659 /* Assets.xcassets */; };
 		EB40A77C2BDAD6830049A659 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB40A77B2BDAD6830049A659 /* Preview Assets.xcassets */; };
-		EB40A7862BDAD70A0049A659 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7852BDAD70A0049A659 /* Destination.swift */; };
-		EB40A7882BDAD7180049A659 /* TimeResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7872BDAD7180049A659 /* TimeResults.swift */; };
-		EB40A78A2BDAD7250049A659 /* CurrencyResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7892BDAD7250049A659 /* CurrencyResults.swift */; };
-		EB40A78C2BDAD73E0049A659 /* NewsResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A78B2BDAD73E0049A659 /* NewsResults.swift */; };
+		EB40A7862BDAD70A0049A659 /* DestinationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7852BDAD70A0049A659 /* DestinationModel.swift */; };
+		EB40A7882BDAD7180049A659 /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7872BDAD7180049A659 /* TimeModel.swift */; };
+		EB40A78A2BDAD7250049A659 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7892BDAD7250049A659 /* CurrencyModel.swift */; };
+		EB40A78C2BDAD73E0049A659 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A78B2BDAD73E0049A659 /* NewsModel.swift */; };
 		EB40A7922BDAD7B70049A659 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7912BDAD7B70049A659 /* TimeManager.swift */; };
 		EB40A7952BDAD7D20049A659 /* CurrencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7942BDAD7D20049A659 /* CurrencyManager.swift */; };
 		EB40A7972BDAD7D80049A659 /* NewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7962BDAD7D80049A659 /* NewsManager.swift */; };
-		EB40A7992BDAD7E20049A659 /* TripPlannerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7982BDAD7E20049A659 /* TripPlannerItem.swift */; };
+		EB40A7992BDAD7E20049A659 /* TripPlannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A7982BDAD7E20049A659 /* TripPlannerModel.swift */; };
 		EB40A79B2BDAD7F70049A659 /* TripPlannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A79A2BDAD7F70049A659 /* TripPlannerManager.swift */; };
 		EB40A79E2BDAD83F0049A659 /* DestinationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A79D2BDAD83F0049A659 /* DestinationRow.swift */; };
 		EB40A7A02BDAD84C0049A659 /* DestinationPortalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB40A79F2BDAD84C0049A659 /* DestinationPortalView.swift */; };
@@ -68,19 +69,20 @@
 		EB2D931D2BDC556C00D68074 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		EB2D93292BDDEB3700D68074 /* Currency-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Currency-Info.plist"; path = "../../Currency-Info.plist"; sourceTree = "<group>"; };
 		EB2D932D2BDDEDAD00D68074 /* News-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "News-Info.plist"; sourceTree = "<group>"; };
+		EB2D93332BE3275600D68074 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EB40A7712BDAD6820049A659 /* RoveTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoveTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB40A7742BDAD6820049A659 /* RoveTravelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoveTravelApp.swift; sourceTree = "<group>"; };
 		EB40A7762BDAD6820049A659 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EB40A7782BDAD6830049A659 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB40A77B2BDAD6830049A659 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EB40A7852BDAD70A0049A659 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
-		EB40A7872BDAD7180049A659 /* TimeResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeResults.swift; sourceTree = "<group>"; };
-		EB40A7892BDAD7250049A659 /* CurrencyResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyResults.swift; sourceTree = "<group>"; };
-		EB40A78B2BDAD73E0049A659 /* NewsResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResults.swift; sourceTree = "<group>"; };
+		EB40A7852BDAD70A0049A659 /* DestinationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationModel.swift; sourceTree = "<group>"; };
+		EB40A7872BDAD7180049A659 /* TimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
+		EB40A7892BDAD7250049A659 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
+		EB40A78B2BDAD73E0049A659 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		EB40A7912BDAD7B70049A659 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		EB40A7942BDAD7D20049A659 /* CurrencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManager.swift; sourceTree = "<group>"; };
 		EB40A7962BDAD7D80049A659 /* NewsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsManager.swift; sourceTree = "<group>"; };
-		EB40A7982BDAD7E20049A659 /* TripPlannerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlannerItem.swift; sourceTree = "<group>"; };
+		EB40A7982BDAD7E20049A659 /* TripPlannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlannerModel.swift; sourceTree = "<group>"; };
 		EB40A79A2BDAD7F70049A659 /* TripPlannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlannerManager.swift; sourceTree = "<group>"; };
 		EB40A79D2BDAD83F0049A659 /* DestinationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationRow.swift; sourceTree = "<group>"; };
 		EB40A79F2BDAD84C0049A659 /* DestinationPortalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationPortalView.swift; sourceTree = "<group>"; };
@@ -94,7 +96,7 @@
 		EB40A7AF2BDAD8A50049A659 /* NewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
 		EB40A7B12BDAD8AF0049A659 /* ItemEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditingView.swift; sourceTree = "<group>"; };
 		EB40A7B32BDAD98E0049A659 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
-		EB40A7B52BDADF990049A659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EB40A7B52BDADF990049A659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,38 @@
 			path = RoveTravelTests;
 			sourceTree = "<group>";
 		};
+		EB2D932F2BE1E7EF00D68074 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EB40A7852BDAD70A0049A659 /* DestinationModel.swift */,
+				EB40A7872BDAD7180049A659 /* TimeModel.swift */,
+				EB40A7892BDAD7250049A659 /* CurrencyModel.swift */,
+				EB40A78B2BDAD73E0049A659 /* NewsModel.swift */,
+				EB40A7982BDAD7E20049A659 /* TripPlannerModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EB2D93352BE32EAC00D68074 /* TripPlannerViews */ = {
+			isa = PBXGroup;
+			children = (
+				EB40A7AB2BDAD8930049A659 /* TripPlannerView.swift */,
+				EB40A7AD2BDAD89D0049A659 /* RowView.swift */,
+				EB40A7AF2BDAD8A50049A659 /* NewItemView.swift */,
+				EB40A7B12BDAD8AF0049A659 /* ItemEditingView.swift */,
+			);
+			path = TripPlannerViews;
+			sourceTree = "<group>";
+		};
+		EB2D93362BE32EBF00D68074 /* NewsWidgetViews */ = {
+			isa = PBXGroup;
+			children = (
+				EB40A7A72BDAD87C0049A659 /* NewsView.swift */,
+				EB40A7A92BDAD8860049A659 /* NewsDetailView.swift */,
+			);
+			path = NewsWidgetViews;
+			sourceTree = "<group>";
+		};
 		EB40A7682BDAD6820049A659 = {
 			isa = PBXGroup;
 			children = (
@@ -163,10 +197,10 @@
 		EB40A7732BDAD6820049A659 /* RoveTravel */ = {
 			isa = PBXGroup;
 			children = (
-				EB40A7B52BDADF990049A659 /* Info.plist */,
 				EB40A7742BDAD6820049A659 /* RoveTravelApp.swift */,
 				EB40A79C2BDAD8300049A659 /* Views */,
-				EB40A7932BDAD7C20049A659 /* Models */,
+				EB40A7932BDAD7C20049A659 /* Managers */,
+				EB2D932F2BE1E7EF00D68074 /* Models */,
 				EB40A7842BDAD6F30049A659 /* Resources */,
 				EB40A77A2BDAD6830049A659 /* Preview Content */,
 			);
@@ -185,20 +219,17 @@
 		EB40A7842BDAD6F30049A659 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EB40A7852BDAD70A0049A659 /* Destination.swift */,
-				EB40A7872BDAD7180049A659 /* TimeResults.swift */,
-				EB40A7892BDAD7250049A659 /* CurrencyResults.swift */,
-				EB40A78B2BDAD73E0049A659 /* NewsResults.swift */,
-				EB40A7982BDAD7E20049A659 /* TripPlannerItem.swift */,
-				EB2D932D2BDDEDAD00D68074 /* News-Info.plist */,
 				EB2D93292BDDEB3700D68074 /* Currency-Info.plist */,
+				EB40A7B52BDADF990049A659 /* Info.plist */,
+				EB2D932D2BDDEDAD00D68074 /* News-Info.plist */,
 				EB2D931D2BDC556C00D68074 /* Launch Screen.storyboard */,
+				EB2D93332BE3275600D68074 /* Constants.swift */,
 				EB40A7782BDAD6830049A659 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		EB40A7932BDAD7C20049A659 /* Models */ = {
+		EB40A7932BDAD7C20049A659 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				EB40A7912BDAD7B70049A659 /* TimeManager.swift */,
@@ -206,7 +237,7 @@
 				EB40A7962BDAD7D80049A659 /* NewsManager.swift */,
 				EB40A79A2BDAD7F70049A659 /* TripPlannerManager.swift */,
 			);
-			path = Models;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		EB40A79C2BDAD8300049A659 /* Views */ = {
@@ -218,12 +249,8 @@
 				EB40A7A12BDAD8560049A659 /* SnapshotView.swift */,
 				EB40A7A32BDAD85F0049A659 /* TimeWidgetView.swift */,
 				EB40A7A52BDAD8690049A659 /* CurrencyWidgetView.swift */,
-				EB40A7A72BDAD87C0049A659 /* NewsView.swift */,
-				EB40A7A92BDAD8860049A659 /* NewsDetailView.swift */,
-				EB40A7AB2BDAD8930049A659 /* TripPlannerView.swift */,
-				EB40A7AD2BDAD89D0049A659 /* RowView.swift */,
-				EB40A7AF2BDAD8A50049A659 /* NewItemView.swift */,
-				EB40A7B12BDAD8AF0049A659 /* ItemEditingView.swift */,
+				EB2D93362BE32EBF00D68074 /* NewsWidgetViews */,
+				EB2D93352BE32EAC00D68074 /* TripPlannerViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -408,22 +435,23 @@
 				EB40A79B2BDAD7F70049A659 /* TripPlannerManager.swift in Sources */,
 				EB40A7972BDAD7D80049A659 /* NewsManager.swift in Sources */,
 				EB40A7A82BDAD87C0049A659 /* NewsView.swift in Sources */,
-				EB40A7882BDAD7180049A659 /* TimeResults.swift in Sources */,
+				EB40A7882BDAD7180049A659 /* TimeModel.swift in Sources */,
 				EB40A7922BDAD7B70049A659 /* TimeManager.swift in Sources */,
 				EB40A7B42BDAD98E0049A659 /* FileManager.swift in Sources */,
 				EB40A79E2BDAD83F0049A659 /* DestinationRow.swift in Sources */,
 				EB40A7B02BDAD8A50049A659 /* NewItemView.swift in Sources */,
-				EB40A78A2BDAD7250049A659 /* CurrencyResults.swift in Sources */,
+				EB40A78A2BDAD7250049A659 /* CurrencyModel.swift in Sources */,
 				EB40A7AA2BDAD8860049A659 /* NewsDetailView.swift in Sources */,
 				EB40A7AE2BDAD89D0049A659 /* RowView.swift in Sources */,
 				EB40A7752BDAD6820049A659 /* RoveTravelApp.swift in Sources */,
-				EB40A7862BDAD70A0049A659 /* Destination.swift in Sources */,
+				EB40A7862BDAD70A0049A659 /* DestinationModel.swift in Sources */,
 				EB40A7952BDAD7D20049A659 /* CurrencyManager.swift in Sources */,
-				EB40A7992BDAD7E20049A659 /* TripPlannerItem.swift in Sources */,
+				EB40A7992BDAD7E20049A659 /* TripPlannerModel.swift in Sources */,
 				EB40A7A62BDAD8690049A659 /* CurrencyWidgetView.swift in Sources */,
 				EB40A7AC2BDAD8930049A659 /* TripPlannerView.swift in Sources */,
 				EB40A7A42BDAD85F0049A659 /* TimeWidgetView.swift in Sources */,
-				EB40A78C2BDAD73E0049A659 /* NewsResults.swift in Sources */,
+				EB40A78C2BDAD73E0049A659 /* NewsModel.swift in Sources */,
+				EB2D93342BE3275600D68074 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,7 +676,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RoveTravel/Info.plist;
+				INFOPLIST_FILE = RoveTravel/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Rove;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -681,7 +709,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RoveTravel/Info.plist;
+				INFOPLIST_FILE = RoveTravel/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Rove;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
