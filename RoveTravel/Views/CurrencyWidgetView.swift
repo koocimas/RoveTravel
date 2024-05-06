@@ -41,6 +41,9 @@ struct CurrencyWidgetView: View {
           .onSubmit {
             runConversion()
           }
+          .onAppear {
+            runConversion()
+          }
           .foregroundStyle(.accent)
           .opacity(Constants.General.currencyTextFieldOpacity)
           .font(.body)
