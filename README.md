@@ -1,6 +1,5 @@
-
-<img width="830" alt="Screenshot 2024-05-06 at 4 12 58 PM" src="https://github.com/koocimas/RoveTravel/assets/129230960/3d7eaac5-3025-4d45-9aa2-6d14f31eff71">
-<img width="859" alt="Screenshot 2024-05-06 at 4 13 06 PM" src="https://github.com/koocimas/RoveTravel/assets/129230960/588fae72-3288-44c0-a73d-ee4e70c70d53">
+<img width="830" alt="Screenshot 2024-05-06 at 4 12 58 PM" src="https://github.com/koocimas/RoveTravel/assets/129230960/2a6a68c1-a490-40a6-a4d4-c57148755ef8">
+<img width="859" alt="Screenshot 2024-05-06 at 4 13 06 PM" src="https://github.com/koocimas/RoveTravel/assets/129230960/1935078e-48a0-4586-a892-291549ef562d">
 
 Rove is a travel planning app that allows you to access destination information and record items in a personal travel planning list. 
 
