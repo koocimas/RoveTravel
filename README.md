@@ -1,3 +1,7 @@
+
+<img width="830" alt="Screenshot 2024-05-06 at 4 12 58 PM" src="https://github.com/koocimas/RoveTravel/assets/129230960/3d7eaac5-3025-4d45-9aa2-6d14f31eff71">
+<img width="859" alt="Screenshot 2024-05-06 at 4 13 06 PM" src="https://github.com/koocimas/RoveTravel/assets/129230960/588fae72-3288-44c0-a73d-ee4e70c70d53">
+
 Rove is a travel planning app that allows you to access destination information and record items in a personal travel planning list. 
 
 Although you can access location times, time zones, current news articles, and exchange rates from your phone’s various apps and internet search browsers, you likely prefer to not change your phone settings or check all of these different things individually. 
@@ -10,33 +14,11 @@ Once you’ve arrived, you will find the exchange rate tool extremely useful in 
 
 When you complete a trip planning item, a checkmark appears but the item does not archive. You can continue to access all of the details in each item to always remember your trip and relive those experiences, much like a travel diary.
 
-1. The app has at least one screen with a list using a view of your choice (List, Grid, ScrollView etc). This list should appear in a tab view with at least two tabs:
-  - News articles present in a list on the first tab
-  - Trip planning items present in a list on the second tab
-2. Each item in the list should contain (at minimum) a name, a subtitle or description, and an image of the item, and any text should be styled appropriately:
-  - News articles provide an image thumbnail next to the article name
-  - Trip planning items display the item name (up to 2 lines) along with a button that is a dotted square when incomplete and a checkmark when complete. This will toggle the task completed variable.
-3. Tapping an item in this list should navigate (NavigationStack)  to a detail view: This should show the same data in the list item with some further details:
-  - News article detail views include their larger image, article name, author(s), published date, and summary.
-  - Trip planning items edit view let the user edit the name, notes, and/or completion toggle.
-4. Include enough items to ensure that the user has to scroll the list to see all the items in it: 
-  - News articles are displayed 10 at a time. Only 100 article results are allowed by the API per day. If you go over the amount and need another api key, let me know (I have two extra accounts/api keys).
-  - Trip planning items are scrollable where there are enough added.
-5. The app has one or more network calls using URLSession to download/upload data related to the core tasks of the app: 
-  - CurrencyManager, TimeManager, and NewsManager all use URLSession network calls to download data.
-6. The app’s repo does not contain API keys or other authentication information. Don’t store API keys or other authentication information in your app’s repo. See this article to store them in a plist, add the plist to your .gitignore file, then attach the plist to your Google doc:
+The app’s repo does not contain API keys or other authentication information. 
   - TimeManager: does not require an API
-  - CurrencyManager: Currency-Info.plist attached in Google doc
-  - NewsManager: News-Info.plist attached in Google doc
-7. If your API has a low request limit that your mentor might hit, highlight this in the README and explain how to use your freeze-dried data:
-  - News articles are displayed 10 at a time. Only 100 article results are allowed by the API per day. If you go over the amount and need another api key, let me know (I have two extra accounts/api keys).
-8. The app uses at least one way to save data: user defaults, plist, file, or keychain. Specify your method in the README:
-  - Trip planning items are saved in JSON in the File Manager’s documents directory.
-9. If you disable any rule for a line of code, explain why in a comment near the disable comment or, if it’s a general situation, explain in the README:  
-  - I have disabled a few of the allowed warnings: multiple_closures_with_trailing_closure
-10. The project has a test plan including both UI and unit tests, with a minimum of 50% code coverage, and all tests succeed. Make sure your test plan is in your repo:
-  - I utilized both UI and unit tests with 58% code coverage.
-11. The app includes at least one SwiftUI animation:
-  - Trip planning items have dotted squares for incomplete items that animate to checkmarks when completed.
+  - CurrencyManager: add a Currency-Info.plist file using an api key from https://www.exchangerate-api.com, formatted API_KEY type String.
+  - NewsManager: News-Info.plist file using an api key from https://newsapi.org, formatted API_KEY type String.
+  - News articles are displayed 10 at a time. Only 100 article results are allowed by the API per day.
 
+The project has a test plan including both UI and unit tests, with 59% code coverage.
 
