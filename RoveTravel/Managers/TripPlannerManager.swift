@@ -7,19 +7,19 @@ import Foundation
 import Combine
 
 class TripPlannerManager: ObservableObject {
-  let tpJSONURL = URL(fileURLWithPath: "CategorizedItems",
+  let tpJSONURL = URL(fileURLWithPath: "Items",
                       relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("json")
   @Published var id = UUID()
   @Published var addingItem = false
   @Published var item: Item = Item.example()
   @Published var items: [Item] = [] {
     didSet {
-      saveJSONCategorizedItems()
+      saveJSONItems()
     }
   }
 
-  func addNewItem(name: String, destinationID: String) {
-    items.append(Item(name: name, destinationID: destinationID))
+  func addNewItem(name: String, notes: String?, destinationID: String) {
+    items.append(Item(name: name, notes: notes ?? "", destinationID: destinationID))
   }
   func removeItem(item: Item) {
     if let index = items.firstIndex(where: { $0.id == item.id }) {
@@ -33,10 +33,10 @@ class TripPlannerManager: ObservableObject {
   }
 
   init() {
-    loadJSONCategorizedItems()
+    loadJSONItems()
   }
 
-  private func loadJSONCategorizedItems() {
+  private func loadJSONItems() {
     guard FileManager.default.fileExists(atPath: tpJSONURL.path) else {
       return
     }
@@ -51,7 +51,7 @@ class TripPlannerManager: ObservableObject {
     }
   }
 
-  private func saveJSONCategorizedItems() {
+  private func saveJSONItems() {
     let encoder = JSONEncoder()
     encoder.outputFormatting = .prettyPrinted
 

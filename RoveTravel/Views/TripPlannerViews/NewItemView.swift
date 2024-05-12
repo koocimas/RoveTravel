@@ -47,7 +47,7 @@ struct NewItemView: View {
         }
         ToolbarItem(placement: .navigationBarTrailing) {
           Button(action: {
-            tripPlannerManager.addNewItem(name: name, destinationID: destination.city)
+            tripPlannerManager.addNewItem(name: name, notes: notes, destinationID: destination.city)
             tripPlannerManager.addingItem = false
             self.presentationMode.wrappedValue.dismiss()
           }, label: {
