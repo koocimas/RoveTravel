@@ -46,13 +46,19 @@ struct TimeWidgetView: View {
           Text("")
         }
         .task {
-          do {
-            getTime()
-            getZone()
-            getDay()
-          }
+          let latitude = Float(destination.latitude)
+          let longitude = Float(destination.longitude)
+          async let firstTimeVar: () = timeManager.fetchDateTime(
+            latitude: latitude,
+            longitude: longitude)
+          async let secondTimeVar: () = timeManager.fetchTimeZone(
+            latitude: latitude,
+            longitude: longitude)
+          async let thirdTimeVar: () = timeManager.fetchDayOfWeek(
+            latitude: latitude,
+            longitude: longitude)
+          let _: [()] = await [firstTimeVar, secondTimeVar, thirdTimeVar]
         }
-
       }
     }
     .padding([.horizontal, .top])
@@ -64,33 +70,6 @@ struct TimeWidgetView: View {
         startPoint: .leading,
         endPoint: .trailing))
     )
-  }
-  func getTime() {
-    Task {
-      timeManager.latitude = Float(destination.latitude)
-      timeManager.longitude = Float(destination.longitude)
-      do {
-        await timeManager.fetchDateTime()
-      }
-    }
-  }
-  func getZone() {
-    Task {
-      timeManager.latitude = Float(destination.latitude)
-      timeManager.longitude = Float(destination.longitude)
-      do {
-        await timeManager.fetchTimeZone()
-      }
-    }
-  }
-  func getDay() {
-    Task {
-      timeManager.latitude = Float(destination.latitude)
-      timeManager.longitude = Float(destination.longitude)
-      do {
-        await timeManager.fetchDayOfWeek()
-      }
-    }
   }
 }
 

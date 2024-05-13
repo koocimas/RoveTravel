@@ -12,13 +12,15 @@ struct NewsView: View {
   var destination: Destination
   var body: some View {
     VStack {
-      Text("News Feed")
-        .foregroundStyle(.accent)
-        .font(.title3)
-        .fontWeight(.light)
-        .multilineTextAlignment(.center)
-        .padding(.top)
       List {
+        Text("News Feed")
+          .foregroundStyle(.accent)
+          .font(.title3)
+          .fontWeight(.light)
+          .padding(.top)
+          .listRowBackground(Color.clear)
+          .frame(maxWidth: .infinity, alignment: .center)
+          .listRowSeparator(.hidden)
         ForEach(newsManager.articles, id: \.title) { article in
           Button(action: {
             selectedNews = article
@@ -46,6 +48,7 @@ struct NewsView: View {
         .listRowBackground(Color.clear)
         .listRowSeparatorTint(Color.accentColor.opacity(Constants.General.newsSeparatorLineOpacity))
       }
+      .clipped()
       .accessibilityIdentifier("newsList")
       .padding(.top, Constants.General.newsWidgetPadding)
       .scrollContentBackground(.hidden)
@@ -55,6 +58,7 @@ struct NewsView: View {
         }
       }
     }
+    .clipped()
     .frame(minHeight: Constants.General.rowFrameMaxHeight, maxHeight: .infinity)
     .background(RoundedRectangle(cornerRadius: Constants.General.roundRectCornerRadius)
       .fill(

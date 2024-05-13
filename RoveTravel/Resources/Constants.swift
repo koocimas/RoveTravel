@@ -21,5 +21,10 @@ enum Constants {
     public static let newsWidgetPadding = CGFloat(-40)
     public static let itemRowLineLimit = 2
     public static let currencyTextFieldLineLimit = 1
+    public static let dayDetailCellPadding = CGFloat(2)
+    public static let weatherTitlePadding = CGFloat(-5)
+    public static let weatherHStackSpacing = CGFloat(40)
+    public static let weatherHStackFrameHeight = CGFloat(150)
+    public static let weatherWidgetPadding = CGFloat(5)
   }
 }
