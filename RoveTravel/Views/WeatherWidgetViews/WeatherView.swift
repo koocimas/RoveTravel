@@ -1,5 +1,5 @@
 //
-//  WeatherWidgetView.swift
+//  WeatherView.swift
 //  RoveTravel
 //
 //  Created by Sam Cook on 5/12/24.
@@ -10,7 +10,7 @@ import Charts
 import CoreLocation
 import WeatherKit
 
-struct WeatherWidgetView: View {
+struct WeatherView: View {
   var location: Destination
   var weatherManagerHelper = WeatherManager.shared
   @State var isLoading = false
@@ -66,5 +66,5 @@ struct WeatherWidgetView: View {
 }
 
 #Preview {
-  WeatherWidgetView(location: Destination.previewDestination[0])
+  WeatherView(location: Destination.previewDestination[0])
 }

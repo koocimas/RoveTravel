@@ -12,7 +12,7 @@ struct SnapshotView: View {
   var body: some View {
     ScrollView {
       TimeWidgetView(timeResults: timeResults, destination: destination)
-      WeatherWidgetView(location: destination)
+      WeatherView(location: destination)
       CurrencyWidgetView(destination: destination)
       NewsView(destination: destination)
     }
