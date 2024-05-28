@@ -19,7 +19,7 @@ class TripPlannerManager: ObservableObject {
   }
 
   func addNewItem(name: String, notes: String?, destinationID: String) {
-    items.append(Item(name: name, notes: notes ?? "", destinationID: destinationID))
+    items.append(Item(name: name, notes: notes ?? "", destinationID: destinationID, photos: []))
   }
   func removeItem(item: Item) {
     if let index = items.firstIndex(where: { $0.id == item.id }) {

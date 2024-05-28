@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Item: Identifiable, Codable, Hashable {
   let id = UUID()
@@ -11,6 +12,7 @@ struct Item: Identifiable, Codable, Hashable {
   var completed: Bool = false
   var notes: String = ""
   var destinationID: String = ""
+  var photos: [Data?]
 
   enum CodingKeys: String, CodingKey {
     case id = "identifier"
@@ -18,14 +20,16 @@ struct Item: Identifiable, Codable, Hashable {
     case completed = "isCompleted"
     case notes
     case destinationID
+    case photos
   }
 
   static func example() -> Item {
     Item(
       name: "Visit Petra",
       completed: false,
-      notes: "",
-      destinationID: "Amman"
+      notes: "Bring water and sunblock",
+      destinationID: "Amman",
+      photos: []
     )
   }
-}
+ }

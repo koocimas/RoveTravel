@@ -29,7 +29,7 @@ struct CurrencyWidgetView: View {
   }
   var body: some View {
     VStack {
-      Text("Exchange Rate")
+      Text("Currency Converter")
         .foregroundStyle(.accent)
         .font(.title3)
         .fontWeight(.light)
