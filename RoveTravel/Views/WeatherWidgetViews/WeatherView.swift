@@ -2,8 +2,6 @@
 //  WeatherView.swift
 //  RoveTravel
 //
-//  Created by Sam Cook on 5/12/24.
-//
 
 import SwiftUI
 import Charts

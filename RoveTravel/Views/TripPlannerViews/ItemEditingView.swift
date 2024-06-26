@@ -8,9 +8,9 @@ import PhotosUI
 
 struct ItemEditingView: View {
   @Environment(\.presentationMode) var presentationMode
-  @ObservedObject var tripPlannerManager: TripPlannerManager
+  var tripPlannerManager: TripPlannerManager
   @State private var selectedPhotos: [PhotosPickerItem] = []
- // @State var userPhotos: [UIImage] = []
+  @State var userPhotos: [UIImage] = []
   @Binding var item: Item
   var body: some View {
     NavigationStack {

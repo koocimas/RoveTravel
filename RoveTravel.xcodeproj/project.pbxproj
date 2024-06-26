@@ -43,6 +43,8 @@
 		EB8D3E5E2BF17F0900FEAA7F /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D3E5D2BF17F0900FEAA7F /* WeatherManager.swift */; };
 		EB8D3E602BF17F9900FEAA7F /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D3E5F2BF17F9900FEAA7F /* WeatherView.swift */; };
 		EB8D3E622BF18E8200FEAA7F /* DayDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D3E612BF18E8200FEAA7F /* DayDetailsCell.swift */; };
+		EB8D3E672C06892800FEAA7F /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D3E662C06892800FEAA7F /* TagListView.swift */; };
+		EB8D3E692C068AA800FEAA7F /* TagRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D3E682C068AA800FEAA7F /* TagRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,8 @@
 		EB8D3E5D2BF17F0900FEAA7F /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		EB8D3E5F2BF17F9900FEAA7F /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		EB8D3E612BF18E8200FEAA7F /* DayDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayDetailsCell.swift; sourceTree = "<group>"; };
+		EB8D3E662C06892800FEAA7F /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
+		EB8D3E682C068AA800FEAA7F /* TagRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,8 @@
 				EB40A7AD2BDAD89D0049A659 /* RowView.swift */,
 				EB40A7AF2BDAD8A50049A659 /* NewItemView.swift */,
 				EB40A7B12BDAD8AF0049A659 /* ItemEditingView.swift */,
+				EB8D3E662C06892800FEAA7F /* TagListView.swift */,
+				EB8D3E682C068AA800FEAA7F /* TagRowView.swift */,
 			);
 			path = TripPlannerViews;
 			sourceTree = "<group>";
@@ -450,6 +456,7 @@
 				EB40A7B22BDAD8AF0049A659 /* ItemEditingView.swift in Sources */,
 				EB40A7A22BDAD8560049A659 /* SnapshotView.swift in Sources */,
 				EB40A7772BDAD6820049A659 /* ContentView.swift in Sources */,
+				EB8D3E672C06892800FEAA7F /* TagListView.swift in Sources */,
 				EB40A7A02BDAD84C0049A659 /* DestinationPortalView.swift in Sources */,
 				EB40A79B2BDAD7F70049A659 /* TripPlannerManager.swift in Sources */,
 				EB40A7972BDAD7D80049A659 /* NewsManager.swift in Sources */,
@@ -467,6 +474,7 @@
 				EB40A7AE2BDAD89D0049A659 /* RowView.swift in Sources */,
 				EB40A7752BDAD6820049A659 /* RoveTravelApp.swift in Sources */,
 				EB40A7862BDAD70A0049A659 /* DestinationModel.swift in Sources */,
+				EB8D3E692C068AA800FEAA7F /* TagRowView.swift in Sources */,
 				EB40A7952BDAD7D20049A659 /* CurrencyManager.swift in Sources */,
 				EB40A7992BDAD7E20049A659 /* TripPlannerModel.swift in Sources */,
 				EB40A7A62BDAD8690049A659 /* CurrencyWidgetView.swift in Sources */,

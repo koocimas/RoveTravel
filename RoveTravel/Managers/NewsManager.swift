@@ -8,7 +8,7 @@ import Foundation
 class NewsManager: ObservableObject {
   @Published var articles: [Article] = []
   @Published var searchText: String = "Amman"
-
+  static let shared = NewsManager()
   func fetchNews() async throws {
       let apiKey = newsApiKey
       let query = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""

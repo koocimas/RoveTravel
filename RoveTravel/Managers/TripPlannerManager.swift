@@ -12,6 +12,7 @@ class TripPlannerManager: ObservableObject {
   @Published var id = UUID()
   @Published var addingItem = false
   @Published var item: Item = Item.example()
+    static let shared = TripPlannerManager()
   @Published var items: [Item] = [] {
     didSet {
       saveJSONItems()

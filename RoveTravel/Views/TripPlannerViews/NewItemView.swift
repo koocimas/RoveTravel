@@ -8,11 +8,13 @@ import PhotosUI
 
 struct NewItemView: View {
   @Environment(\.presentationMode) var presentationMode
-  @ObservedObject var tripPlannerManager: TripPlannerManager
+  var tripPlannerManager: TripPlannerManager
   @State private var name = ""
   @State private var notes = ""
+//  @State private var tagSheetPresented: Bool = false
   @State private var selectedPhotos: [PhotosPickerItem] = []
   @State private var userPhotos: [UIImage] = []
+//  @Binding var item: Item
   var destination: Destination
   var body: some View {
     NavigationStack {
@@ -28,12 +30,31 @@ struct NewItemView: View {
             .fontWeight(.light)
             .listRowBackground(Color.light)
         }
+//        Section(header: Text("Item Notes")) {
+//          HStack {
+//            ForEach(item.tag, id: \.self) { tag in
+//              Text(tag.name)
+//            }
+//          }
+//        }
+//        Section(header: Text("Item Tags")) {
+//          HStack {
+//            Text("Tags")
+//            Spacer()
+//            Button(
+//              action: { tagSheetPresented.toggle() }, label: {
+//                Image(systemName: "plus")
+//              })
+//          }
+//          .fontWeight(.light)
+//          .listRowBackground(Color.light)
+//        }
         ForEach(userPhotos, id: \.cgImage) { image in
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: .infinity, height: .infinity)
-                        .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
+          Image(uiImage: image)
+            .resizable()
+            .scaledToFit()
+            .frame(width: .infinity, height: .infinity)
+            .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
         }
         .listRowSeparator(.hidden)
         .listRowBackground(Color.light)
@@ -46,23 +67,23 @@ struct NewItemView: View {
         }
                      .listRowSeparator(.hidden)
                      .listRowBackground(Color.light)
-                             .onChange(of: selectedPhotos) { selectedPhotos in
-                                 userPhotos = []
-                                 for item in selectedPhotos {
-                                     item.loadTransferable(type: Data.self) { result in
-                                         switch result {
-                                         case .success(let imageData):
-                                             if let imageData {
-                                                 self.userPhotos.append(UIImage(data: imageData)!)
-                                             } else {
-                                                 print("No supported content type found.")
-                                             }
-                                         case .failure(let error):
-                                             print(error)
-                                         }
-                                     }
-                                 }
+                     .onChange(of: selectedPhotos) { _, selectedPhotos in
+                       userPhotos = []
+                       for item in selectedPhotos {
+                         item.loadTransferable(type: Data.self) { result in
+                           switch result {
+                           case .success(let imageData):
+                             if let imageData {
+                               self.userPhotos.append(UIImage(data: imageData)!)
+                             } else {
+                               print("No supported content type found.")
                              }
+                           case .failure(let error):
+                             print(error)
+                           }
+                         }
+                       }
+                     }
       }
       .toolbar {
         ToolbarItem(placement: .navigationBarLeading) {
@@ -95,6 +116,9 @@ struct NewItemView: View {
           .disabled(name.isEmpty)
         }
       }
+//      .sheet(isPresented: $tagSheetPresented) {
+//        TagListView(selectedTags: [])
+//      }
       .navigationBarTitleDisplayMode(.inline)
       .scrollContentBackground(.hidden)
       .background(.dark)
@@ -104,6 +128,6 @@ struct NewItemView: View {
 
 struct NewItemView_Previews: PreviewProvider {
   static var previews: some View {
-    NewItemView(tripPlannerManager: TripPlannerManager(), destination: Destination.previewDestination[0])
+      NewItemView(tripPlannerManager: TripPlannerManager(), destination: Destination.previewDestination[0])
   }
 }

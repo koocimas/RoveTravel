@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct RowView: View {
-  @ObservedObject var tripPlannerManager: TripPlannerManager
+  var tripPlannerManager: TripPlannerManager
   @State var isAnimating = false
   @Binding var completed: Bool
   var item: Item

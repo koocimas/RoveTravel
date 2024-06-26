@@ -6,19 +6,16 @@
 import SwiftUI
 
 struct DestinationRow: View {
-  @State var destination: Destination
-  @StateObject var timeManager = TimeManager()
-  var timeResults: TimeResults
+  var destination: Destination
   var body: some View {
     NavigationLink("\(destination.city), \(destination.country)",
-                   destination: DestinationPortalView(destination: destination,
-                                                      timeResults: timeResults))
+                   destination: DestinationPortalView(destination: destination))
     .foregroundStyle(Color.accent)
   }
 }
 
 struct DestinationRow_Previews: PreviewProvider {
   static var previews: some View {
-    DestinationRow(destination: Destination.previewDestination[0], timeResults: TimeResults.timeExample)
+    DestinationRow(destination: Destination.previewDestination[0])
   }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 struct RoveApp: App {
     var body: some Scene {
         WindowGroup {
-          ContentView(destination: Destination.previewDestination[0], timeResults: TimeResults.timeExample)
+          ContentView(destination: Destination.previewDestination[0])
         }
     }
 }

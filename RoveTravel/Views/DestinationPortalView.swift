@@ -6,15 +6,11 @@
 import SwiftUI
 
 struct DestinationPortalView: View {
-  @State var destination: Destination
-  @State var timeResults: TimeResults
-  @ObservedObject var tripPlannerManager = TripPlannerManager()
-  @ObservedObject var timeManager = TimeManager()
-  init(destination: Destination,
-       timeResults: TimeResults,
-       tripPlannerManager: TripPlannerManager = TripPlannerManager()) {
+  var destination: Destination
+  var timeManager = TimeManager.shared
+  var timeResults = TimeResults.timeExample
+  init(destination: Destination) {
     self.destination = destination
-    self.timeResults = timeResults
     self.timeManager.latitude = Float(destination.latitude)
     self.timeManager.longitude = Float(destination.longitude)
     UITabBarItem.appearance().badgeColor = .badge
@@ -31,7 +27,7 @@ struct DestinationPortalView: View {
           Label("Snapshot", systemImage: "dot.circle.viewfinder")
         }
       TripPlannerView(
-        tripPlannerManager: TripPlannerManager(),
+        tripPlannerManager: TripPlannerManager.shared,
         destination: destination
       )
       .tabItem {
@@ -42,10 +38,10 @@ struct DestinationPortalView: View {
 }
 
 #Preview {
-  DestinationPortalView(destination: Destination.previewDestination[0], timeResults: TimeResults.timeExample)
+  DestinationPortalView(destination: Destination.previewDestination[0])
     .preferredColorScheme(.light)
 }
 #Preview {
-  DestinationPortalView(destination: Destination.previewDestination[0], timeResults: TimeResults.timeExample)
+  DestinationPortalView(destination: Destination.previewDestination[0])
     .preferredColorScheme(.dark)
 }

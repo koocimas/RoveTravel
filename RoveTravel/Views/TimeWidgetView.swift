@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct TimeWidgetView: View {
-  @ObservedObject var timeManager = TimeManager()
+  @ObservedObject var timeManager = TimeManager.shared
   @State var timeResults: TimeResults = TimeResults.timeExample
   var destination: Destination
   private var destinationDateTime: String {

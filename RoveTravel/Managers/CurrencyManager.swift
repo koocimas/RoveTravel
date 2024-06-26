@@ -11,7 +11,7 @@ class CurrencyManager: ObservableObject {
   @Published var targetCode: String? = ""
   @Published var conversionResult = 0.00
   @Published var conversionRate = 0.00
-
+static let shared = CurrencyManager()
   func fetchConversion() async throws {
       let apiKey = currencyApiKey
       let urlString =

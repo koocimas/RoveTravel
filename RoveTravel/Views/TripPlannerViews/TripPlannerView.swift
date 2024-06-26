@@ -67,7 +67,7 @@ struct TripPlannerView: View {
     .listStyle(InsetGroupedListStyle())
     .scrollContentBackground(.hidden)
     .sheet(isPresented: $sheetPresented) {
-      NewItemView(tripPlannerManager: self.tripPlannerManager, destination: destination)
+        NewItemView(tripPlannerManager: self.tripPlannerManager, destination: destination)
     }
     .sheet(item: $selectedItem) {selectedItem in
       ItemEditingView(
@@ -81,7 +81,7 @@ struct TripPlannerView: View {
 struct TripPlannerView_Previews: PreviewProvider {
   static var previews: some View {
     NavigationStack {
-      TripPlannerView(tripPlannerManager: TripPlannerManager(), destination: Destination.previewDestination[0])
+        TripPlannerView(tripPlannerManager: TripPlannerManager(), destination: Destination.previewDestination[0])
     }
   }
 }
