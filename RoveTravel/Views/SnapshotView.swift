@@ -9,12 +9,13 @@ import WeatherKit
 struct SnapshotView: View {
   var destination: Destination
   var timeResults: TimeResults
+
   var body: some View {
     ScrollView {
-      TimeWidgetView(timeResults: timeResults, destination: destination)
-      WeatherView(location: destination)
-      CurrencyWidgetView(destination: destination)
-      NewsView(destination: destination)
+        TimeWidgetView(viewModel: TimeWidgetViewModel(destination: destination))
+        WeatherView(viewModel: WeatherViewModel(destination: destination))
+        CurrencyWidgetView(viewModel: CurrencyWidgetViewModel(destination: destination))
+      NewsView(viewModel: NewsViewModel(destination: destination))
     }
     .padding()
     .background(

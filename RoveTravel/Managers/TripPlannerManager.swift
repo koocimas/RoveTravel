@@ -78,3 +78,9 @@ extension TripPlannerManager: Identifiable, Hashable {
     return true
   }
 }
+
+public extension FileManager {
+  static var documentsDirectoryURL: URL {
+    URL.documentsDirectory
+  }
+}

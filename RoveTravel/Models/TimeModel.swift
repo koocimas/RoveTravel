@@ -33,6 +33,7 @@ extension TimeResults {
       dstActive: true)
   }
 }
+
 func timeIn12HourFormat(from date: Date) -> String {
   let dateFormatter = DateFormatter()
   dateFormatter.dateFormat = "h:mm a"
@@ -40,6 +41,13 @@ func timeIn12HourFormat(from date: Date) -> String {
   dateFormatter.pmSymbol = "PM"
   return dateFormatter.string(from: date)
 }
+
+func fullDate(from date: Date) -> String {
+  let dateFormatter = DateFormatter()
+  dateFormatter.dateFormat = "MMMM dd, YYYY"
+  return dateFormatter.string(from: date)
+}
+
 func dateFormatTime(date: String) -> Date {
   let dateFormatter = DateFormatter()
   dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSS"

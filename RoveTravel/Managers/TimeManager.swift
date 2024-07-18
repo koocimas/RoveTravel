@@ -12,6 +12,7 @@ class TimeManager: ObservableObject {
   @Published var timeZone: String = ""
   @Published var dayOfWeek: String = ""
     static let shared = TimeManager()
+
   func fetchDateTime(latitude: Float, longitude: Float) async {
     let urlString = "https://timeapi.io/api/Time/current/coordinate?latitude=\(latitude)&longitude=\(longitude)"
     guard let url = URL(string: urlString) else {

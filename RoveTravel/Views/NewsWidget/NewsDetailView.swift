@@ -6,22 +6,29 @@
 import SwiftUI
 
 struct NewsDetailView: View {
-  @Environment(\.presentationMode) var presentationMode
+  @Environment(\.dismiss) var dismiss
   let articles: Article
 
   var body: some View {
     NavigationStack {
       ScrollView {
         VStack {
-          AsyncImage(url: URL(string: "\(String(describing: articles.urlToImage ?? ""))")) { image in
-            image
-              .resizable()
-              .frame(maxWidth: .infinity, maxHeight: .infinity)
-              .aspectRatio(contentMode: .fit)
-          } placeholder: {
-            ProgressView()
-          }
-          .padding(Constants.General.newsDetailPadding)
+            AsyncImage(url: URL(string: articles.urlToImage ?? "")) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                case .success(let image):
+                    image
+                        .resizable()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .aspectRatio(contentMode: .fit)
+                        .padding(Constants.General.newsDetailPadding)
+                case .failure:
+                    Text("Image can't load")
+                @unknown default:
+                    Text("Image can't load")
+                }
+            }
           Text(articles.title ?? "")
             .font(.headline)
             .multilineTextAlignment(.center)
@@ -55,7 +62,7 @@ struct NewsDetailView: View {
         ToolbarItem(placement: .topBarTrailing) {
           Button(action: {
             Task {
-              self.presentationMode.wrappedValue.dismiss()
+                self.dismiss()
             }
           }, label: {
             Text("Dismiss")

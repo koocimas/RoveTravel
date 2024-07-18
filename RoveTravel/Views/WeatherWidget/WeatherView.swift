@@ -9,21 +9,15 @@ import CoreLocation
 import WeatherKit
 
 struct WeatherView: View {
-  var location: Destination
-  var weatherManagerHelper = WeatherManager.shared
-  @State var isLoading = false
-  @State var stateText = ""
-  @State var dailyForecast: Forecast<DayWeather>?
-  @State var hourlyForecast: Forecast<HourWeather>?
-
+    @ObservedObject var viewModel: WeatherViewModel
   var body: some View {
       VStack {
-        if isLoading {
+          if viewModel.isLoading {
           ProgressView()
         }
         ScrollView {
           VStack {
-            if let daily = dailyForecast {
+              if let daily = viewModel.dailyForecast {
               Text("Weather Forecast")
                 .foregroundStyle(.accent)
                 .font(.title3)
@@ -44,14 +38,6 @@ struct WeatherView: View {
         }
       }
       .navigationBarTitleDisplayMode(.inline)
-      .task {
-        isLoading = true
-        Task.detached {
-          dailyForecast = await weatherManagerHelper.dailyForecast(lat: location.latitude, long: location.longitude
-          )
-          isLoading = false
-        }
-      }
     .padding()
     .frame(maxWidth: .infinity)
     .background(RoundedRectangle(cornerRadius: Constants.General.roundRectCornerRadius)
@@ -64,5 +50,5 @@ struct WeatherView: View {
 }
 
 #Preview {
-  WeatherView(location: Destination.previewDestination[0])
-}
+    let viewModel = WeatherViewModel(destination: Destination.previewDestination[0])
+    return WeatherView(viewModel: viewModel)}
